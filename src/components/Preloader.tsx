@@ -35,7 +35,7 @@ const Preloader = ({ onComplete }: PreloaderProps) => {
         <img
           src={logo}
           alt="Kaaifeesten Logo"
-          className="w-48 h-48 md:w-64 md:h-64 object-contain transition-opacity duration-100"
+          className="w-48 h-48 md:w-64 md:h-64 object-contain transition-opacity duration-100 brightness-0"
           style={{ opacity: progress / 100 }}
         />
         <div className="flex flex-col items-center gap-2">
