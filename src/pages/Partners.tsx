@@ -23,7 +23,7 @@ const Partners = () => {
       
       {/* Hero with image placeholder */}
       <section className="relative">
-        <div className="h-[60vh] bg-foreground relative overflow-hidden">
+        <div className="h-[60vh] bg-primary relative overflow-hidden">
           <img
             src="https://images.unsplash.com/photo-1560439514-4e9645039924?w=1920&h=800&fit=crop"
             alt="Partners achtergrond"
@@ -31,10 +31,10 @@ const Partners = () => {
           />
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-center px-4">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-background mb-4 tracking-tight">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground mb-4 tracking-tight">
                 Onze Partners
               </h1>
-              <p className="text-lg text-background/70 max-w-2xl mx-auto font-light italic">
+              <p className="text-lg text-primary-foreground/70 max-w-2xl mx-auto font-light italic">
                 Samen maken we De Kaaifeesten mogelijk
               </p>
             </div>
