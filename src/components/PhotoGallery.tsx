@@ -20,12 +20,12 @@ const PhotoGallery = () => {
       alt: "Live muziek",
     },
     {
-      src: gallery4,
-      alt: "Zanger op het podium",
-    },
-    {
       src: gallery5,
       alt: "Feestend publiek",
+    },
+    {
+      src: gallery4,
+      alt: "Zanger op het podium",
     },
     {
       src: gallery6,
