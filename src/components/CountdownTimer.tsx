@@ -36,47 +36,30 @@ const CountdownTimer = () => {
   }, []);
 
   const timeBlocks = [
-    { value: timeLeft.days, label: "Dagen" },
-    { value: timeLeft.hours, label: "Uren" },
-    { value: timeLeft.minutes, label: "Minuten" },
-    { value: timeLeft.seconds, label: "Seconden" },
+    { value: timeLeft.days, label: "D" },
+    { value: timeLeft.hours, label: "H" },
+    { value: timeLeft.minutes, label: "M" },
+    { value: timeLeft.seconds, label: "S" },
   ];
 
   return (
-    <section className="py-20 bg-secondary">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
-            De Kaaifeesten 2026
-          </h2>
-          <p className="text-secondary-foreground/80 text-lg">
-            2 - 5 oktober 2026 • Eeklo
-          </p>
+    <div className="flex justify-center items-baseline gap-2 md:gap-4">
+      {timeBlocks.map((block, index) => (
+        <div key={block.label} className="flex items-baseline">
+          <div className="flex items-baseline gap-1">
+            <span className="text-4xl md:text-6xl lg:text-7xl font-bold text-background tracking-tighter tabular-nums">
+              {String(block.value).padStart(2, "0")}
+            </span>
+            <span className="text-sm md:text-base text-background/50 font-light">
+              {block.label}
+            </span>
+          </div>
+          {index < timeBlocks.length - 1 && (
+            <span className="text-2xl md:text-4xl text-background/30 ml-2 md:ml-4 font-light">:</span>
+          )}
         </div>
-
-        <div className="flex justify-center gap-4 md:gap-8">
-          {timeBlocks.map((block, index) => (
-            <div
-              key={block.label}
-              className="flex flex-col items-center"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="relative">
-                <div className="w-20 h-20 md:w-28 md:h-28 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center shadow-lg">
-                  <span className="font-display text-3xl md:text-5xl font-bold text-secondary">
-                    {String(block.value).padStart(2, "0")}
-                  </span>
-                </div>
-                <div className="absolute -inset-1 bg-gradient-to-br from-primary to-accent rounded-xl opacity-30 blur-md -z-10" />
-              </div>
-              <span className="mt-3 text-secondary-foreground/80 text-sm md:text-base font-medium uppercase tracking-wider">
-                {block.label}
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+      ))}
+    </div>
   );
 };
 
