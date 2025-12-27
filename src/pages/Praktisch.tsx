@@ -190,9 +190,9 @@ const Praktisch = () => {
       <Navbar />
       
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-foreground">
+      <section className="pt-32 pb-20 bg-primary">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-background text-center tracking-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground text-center tracking-tight">
             Praktische Info
           </h1>
         </div>
@@ -256,7 +256,7 @@ const Praktisch = () => {
                   onClick={() => setSelectedDay(selectedDay === day.key ? null : day.key)}
                   className={`p-4 font-medium text-sm uppercase tracking-[0.1em] transition-all duration-200 ${
                     selectedDay === day.key
-                      ? "bg-foreground text-background"
+                      ? "bg-primary text-primary-foreground"
                       : "bg-background text-foreground hover:bg-muted"
                   }`}
                 >

@@ -49,12 +49,12 @@ const Contact = () => {
       <Navbar />
       
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-foreground">
+      <section className="pt-32 pb-20 bg-primary">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-background mb-4 tracking-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground mb-4 tracking-tight">
             Contact
           </h1>
-          <p className="text-lg text-background/70 max-w-2xl mx-auto font-light italic">
+          <p className="text-lg text-primary-foreground/70 max-w-2xl mx-auto font-light italic">
             Heb je vragen? Neem gerust contact met ons op.
           </p>
         </div>

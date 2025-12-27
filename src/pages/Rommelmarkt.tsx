@@ -31,15 +31,15 @@ const Rommelmarkt = () => {
       <Navbar />
       
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-foreground">
+      <section className="pt-32 pb-20 bg-primary">
         <div className="container mx-auto px-4 text-center">
-          <span className="inline-block text-xs uppercase tracking-[0.3em] text-background/60 mb-4">
+          <span className="inline-block text-xs uppercase tracking-[0.3em] text-primary-foreground/60 mb-4">
             Zondag 4 oktober 2026
           </span>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-background mb-4 tracking-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground mb-4 tracking-tight">
             Grootste Rommelmarkt van Vlaanderen
           </h1>
-          <p className="text-lg text-background/70 max-w-2xl mx-auto font-light italic">
+          <p className="text-lg text-primary-foreground/70 max-w-2xl mx-auto font-light italic">
             Boek hier jouw standplaats voor 2026
           </p>
         </div>
@@ -58,7 +58,7 @@ const Rommelmarkt = () => {
               </div>
               
               <div className="space-y-6">
-                <div className="flex items-start gap-6 p-6 border-l-2 border-foreground">
+                <div className="flex items-start gap-6 p-6 border-l-2 border-primary">
                   <div>
                     <h4 className="font-semibold text-foreground">Tot 1 januari 2026</h4>
                     <p className="text-muted-foreground text-sm mt-1">
@@ -130,9 +130,9 @@ const Rommelmarkt = () => {
                   </div>
 
                   {/* Progress bar */}
-                  <div className="h-px bg-muted mb-2 relative">
+                  <div className="h-1 bg-muted mb-2 relative">
                     <div
-                      className="absolute left-0 top-0 h-full bg-foreground"
+                      className="absolute left-0 top-0 h-full bg-primary"
                       style={{ width: `${100 - percentage}%` }}
                     />
                   </div>
