@@ -27,37 +27,31 @@ const PhotoGallery = () => {
   ];
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-32 bg-secondary">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold uppercase tracking-wider mb-4">
+        <div className="mb-16">
+          <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4 block">
             Sfeerbeelden
           </span>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground">
-            Beelden van vorige edities
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight">
+            Vorige Edities
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-1">
           {photos.map((photo, index) => (
             <div
               key={index}
-              className={`relative overflow-hidden rounded-xl group ${
-                index === 0 || index === 5 ? "md:col-span-1 md:row-span-1" : ""
-              }`}
+              className="relative overflow-hidden group"
             >
               <div className="aspect-[4/3] overflow-hidden">
                 <img
                   src={photo.src}
                   alt={photo.alt}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
                 />
               </div>
-              <div className="absolute inset-0 bg-secondary/0 group-hover:bg-secondary/40 transition-colors duration-300 flex items-center justify-center">
-                <span className="text-primary-foreground font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  {photo.alt}
-                </span>
-              </div>
+              <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/20 transition-colors duration-300" />
             </div>
           ))}
         </div>
