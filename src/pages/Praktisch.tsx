@@ -176,7 +176,7 @@ const dayContent: Record<DayKey, DayInfo> = {
 };
 
 const Praktisch = () => {
-  const [selectedDay, setSelectedDay] = useState<DayKey | null>(null);
+  const [selectedDay, setSelectedDay] = useState<DayKey | null>("vrijdag");
 
   const days: { key: DayKey; label: string }[] = [
     { key: "vrijdag", label: "Vrijdag" },

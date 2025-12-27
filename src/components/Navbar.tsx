@@ -2,11 +2,16 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import kaaifeestenLogo from "@/assets/kaaifeesten-logo.png";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+
+  // Pages with dark hero sections where navbar should start light
+  const darkHeroPages = ["/", "/praktisch", "/rommelmarkt", "/partners", "/contact"];
+  const hasDarkHero = darkHeroPages.includes(location.pathname);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +31,9 @@ const Navbar = () => {
 
   const isActive = (path: string) => location.pathname === path;
 
+  // Determine if we should show light or dark text
+  const showLightText = hasDarkHero && !isScrolled;
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -38,9 +46,11 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <span className={`text-xl font-bold uppercase tracking-[0.15em] ${isScrolled ? 'text-foreground' : 'text-background'}`}>
-              De Kaaifeesten
-            </span>
+            <img 
+              src={kaaifeestenLogo} 
+              alt="De Kaaifeesten" 
+              className={`h-10 w-auto ${showLightText ? '' : 'invert'}`}
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -51,8 +61,8 @@ const Navbar = () => {
                 to={link.path}
                 className={`text-sm uppercase tracking-[0.1em] transition-colors duration-200 ${
                   isActive(link.path)
-                    ? isScrolled ? "text-foreground font-semibold" : "text-background font-semibold"
-                    : isScrolled ? "text-muted-foreground hover:text-foreground" : "text-background/70 hover:text-background"
+                    ? showLightText ? "text-background font-semibold" : "text-foreground font-semibold"
+                    : showLightText ? "text-background/70 hover:text-background" : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {link.name}
@@ -63,7 +73,7 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button variant={isScrolled ? "default" : "outline"} size="sm" className={`uppercase tracking-[0.15em] text-xs px-6 ${!isScrolled && 'border-background text-background hover:bg-background hover:text-foreground'}`}>
+              <Button variant={isScrolled ? "default" : "outline"} size="sm" className={`uppercase tracking-[0.15em] text-xs px-6 ${showLightText && 'border-background text-background hover:bg-background hover:text-foreground'}`}>
                 Tickets
               </Button>
             </a>
@@ -71,7 +81,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className={`md:hidden p-2 ${isScrolled ? 'text-foreground' : 'text-background'}`}
+            className={`md:hidden p-2 ${showLightText ? 'text-background' : 'text-foreground'}`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -88,8 +98,8 @@ const Navbar = () => {
                   to={link.path}
                   className={`text-sm uppercase tracking-[0.1em] py-2 transition-colors ${
                     isActive(link.path)
-                      ? isScrolled ? "text-foreground font-semibold" : "text-background font-semibold"
-                      : isScrolled ? "text-muted-foreground" : "text-background/70"
+                      ? showLightText ? "text-background font-semibold" : "text-foreground font-semibold"
+                      : showLightText ? "text-background/70" : "text-muted-foreground"
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
