@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -15,10 +16,13 @@ const partners = [
 const Partners = () => {
   return (
     <main className="min-h-screen bg-background">
-      <Navbar />
+      {/* Dark hero background for proper navbar contrast */}
+      <div className="bg-foreground">
+        <Navbar />
+      </div>
       
       {/* Hero with image placeholder */}
-      <section className="pt-24 relative">
+      <section className="relative">
         <div className="h-[60vh] bg-foreground relative overflow-hidden">
           <img
             src="https://images.unsplash.com/photo-1560439514-4e9645039924?w=1920&h=800&fit=crop"

@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
 import CountdownTimer from "./CountdownTimer";
 
@@ -39,21 +38,8 @@ const HeroSection = () => {
         </p>
 
         {/* Countdown Timer */}
-        <div className="mb-12 animate-slide-up" style={{ animationDelay: "0.3s" }}>
+        <div className="animate-slide-up" style={{ animationDelay: "0.3s" }}>
           <CountdownTimer />
-        </div>
-
-        <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up" style={{ animationDelay: "0.4s" }}>
-          <a href="https://tickets.example.com" target="_blank" rel="noopener noreferrer">
-            <Button variant="default" size="lg" className="text-sm uppercase tracking-[0.2em] px-10 py-6">
-              Tickets
-            </Button>
-          </a>
-          <a href="/praktisch">
-            <Button variant="outline" size="lg" className="text-sm uppercase tracking-[0.2em] px-10 py-6 border-background/50 text-background hover:bg-background hover:text-foreground">
-              Praktische Info
-            </Button>
-          </a>
         </div>
       </div>
 

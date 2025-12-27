@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { MapPin, Mail } from "lucide-react";
+import kaaifeestenLogo from "@/assets/kaaifeesten-logo.png";
 
 const Footer = () => {
   const navLinks = [
@@ -16,9 +17,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
           {/* Logo & Description */}
           <div className="space-y-6">
-            <h3 className="text-2xl font-bold uppercase tracking-[0.1em]">
-              De Kaaifeesten
-            </h3>
+            <img 
+              src={kaaifeestenLogo} 
+              alt="De Kaaifeesten" 
+              className="h-12 w-auto"
+            />
             <p className="text-background/60 leading-relaxed font-light">
               De grootste rommelmarkt van Vlaanderen. Een traditioneel buurtfeest 
               waar jong en oud samenkomt in het hartje van Eeklo.
