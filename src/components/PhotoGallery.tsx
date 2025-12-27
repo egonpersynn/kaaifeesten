@@ -1,28 +1,35 @@
+import gallery1 from "@/assets/gallery-1.png";
+import gallery2 from "@/assets/gallery-2.png";
+import gallery3 from "@/assets/gallery-3.png";
+import gallery4 from "@/assets/gallery-4.png";
+import gallery5 from "@/assets/gallery-5.png";
+import gallery6 from "@/assets/gallery-6.png";
+
 const PhotoGallery = () => {
   const photos = [
     {
-      src: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=600&h=400&fit=crop",
-      alt: "Festival sfeer",
+      src: gallery1,
+      alt: "DJ op het podium",
     },
     {
-      src: "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=600&h=400&fit=crop",
+      src: gallery2,
+      alt: "Bezoekers en families",
+    },
+    {
+      src: gallery3,
       alt: "Live muziek",
     },
     {
-      src: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600&h=400&fit=crop",
-      alt: "Avondprogramma",
+      src: gallery4,
+      alt: "Zanger op het podium",
     },
     {
-      src: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=600&h=400&fit=crop",
-      alt: "Publiek",
+      src: gallery5,
+      alt: "Feestend publiek",
     },
     {
-      src: "https://images.unsplash.com/photo-1560439514-4e9645039924?w=600&h=400&fit=crop",
-      alt: "Rommelmarkt",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&h=400&fit=crop",
-      alt: "Festival lichten",
+      src: gallery6,
+      alt: "Seniorennamiddag",
     },
   ];
 
