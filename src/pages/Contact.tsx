@@ -166,7 +166,7 @@ const Contact = () => {
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2499.6647474831086!2d3.5567!3d51.1858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c373f0e1a0c4e9%3A0x40099ab2f4d6f50!2sGebroeders%20Van%20de%20Woestyneplein%2C%209900%20Eeklo!5e0!3m2!1snl!2sbe!4v1703123456789!5m2!1snl!2sbe"
                   width="100%"
                   height="100%"
-                  style={{ border: 0, filter: 'grayscale(100%)' }}
+                  style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"

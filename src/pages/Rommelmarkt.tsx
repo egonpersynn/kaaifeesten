@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { MapPin, Users, Calendar, Info } from "lucide-react";
+import heroRommelmarkt from "@/assets/hero-rommelmarkt.png";
 
 interface Street {
   id: number;
@@ -31,15 +32,23 @@ const Rommelmarkt = () => {
       <Navbar />
       
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-primary">
-        <div className="container mx-auto px-4 text-center">
-          <span className="inline-block text-xs uppercase tracking-[0.3em] text-primary-foreground/60 mb-4">
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-foreground/60 z-10" />
+          <img
+            src={heroRommelmarkt}
+            alt="Rommelmarkt sfeer"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="container mx-auto px-4 text-center relative z-20">
+          <span className="inline-block text-xs uppercase tracking-[0.3em] text-background/60 mb-4">
             Zondag 4 oktober 2026
           </span>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground mb-4 tracking-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-background mb-4 tracking-tight">
             Grootste Rommelmarkt van Vlaanderen
           </h1>
-          <p className="text-lg text-primary-foreground/70 max-w-2xl mx-auto font-light italic">
+          <p className="text-lg text-background/70 max-w-2xl mx-auto font-light italic">
             Boek hier jouw standplaats voor 2026
           </p>
         </div>

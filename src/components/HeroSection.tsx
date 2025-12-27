@@ -1,5 +1,6 @@
 import { Play } from "lucide-react";
 import CountdownTimer from "./CountdownTimer";
+import heroHome from "@/assets/hero-home.png";
 
 const HeroSection = () => {
   return (
@@ -8,9 +9,9 @@ const HeroSection = () => {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-foreground/70 z-10" />
         <img
-          src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=1920&h=1080&fit=crop"
+          src={heroHome}
           alt="Kaaifeesten sfeer"
-          className="w-full h-full object-cover opacity-50 grayscale"
+          className="w-full h-full object-cover opacity-60"
         />
       </div>
 

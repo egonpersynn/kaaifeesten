@@ -49,7 +49,8 @@ const Navbar = () => {
             <img 
               src={kaaifeestenLogo} 
               alt="De Kaaifeesten" 
-              className={`h-10 w-auto ${showLightText ? '' : 'invert'}`}
+              className={`h-10 w-auto ${showLightText ? '' : ''}`}
+              style={!showLightText ? { filter: 'brightness(0) saturate(100%) invert(7%) sepia(46%) saturate(4756%) hue-rotate(213deg) brightness(96%) contrast(104%)' } : {}}
             />
           </Link>
 
