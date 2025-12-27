@@ -1,12 +1,25 @@
+import adremKeukens from "@/assets/sponsors/adrem-keukens.png";
+import leonidas from "@/assets/sponsors/leonidas.png";
+import steyaertHeene from "@/assets/sponsors/steyaert-heene.png";
+import hubo from "@/assets/sponsors/hubo.png";
+import alsan from "@/assets/sponsors/alsan.png";
+import willemsBiscuits from "@/assets/sponsors/willems-biscuits.png";
+import kuvacon from "@/assets/sponsors/kuvacon.png";
+import smo from "@/assets/sponsors/smo.png";
+import immoyves from "@/assets/sponsors/immoyves.png";
+import tuinenDeJonghe from "@/assets/sponsors/tuinen-de-jonghe.png";
+
 const sponsors = [
-  { id: 1, name: "Sponsor 1" },
-  { id: 2, name: "Sponsor 2" },
-  { id: 3, name: "Sponsor 3" },
-  { id: 4, name: "Sponsor 4" },
-  { id: 5, name: "Sponsor 5" },
-  { id: 6, name: "Sponsor 6" },
-  { id: 7, name: "Sponsor 7" },
-  { id: 8, name: "Sponsor 8" },
+  { id: 1, name: "Adrem Keukens", logo: adremKeukens },
+  { id: 2, name: "Leonidas", logo: leonidas },
+  { id: 3, name: "Steyaert-Heene", logo: steyaertHeene },
+  { id: 4, name: "Hubo", logo: hubo },
+  { id: 5, name: "Alsan", logo: alsan },
+  { id: 6, name: "Willems Biscuits", logo: willemsBiscuits },
+  { id: 7, name: "Kuvacon", logo: kuvacon },
+  { id: 8, name: "SMO", logo: smo },
+  { id: 9, name: "Immo Yves", logo: immoyves },
+  { id: 10, name: "Tuinen De Jonghe", logo: tuinenDeJonghe },
 ];
 
 const SponsorSlider = () => {
@@ -23,11 +36,13 @@ const SponsorSlider = () => {
           {[...sponsors, ...sponsors].map((sponsor, index) => (
             <div
               key={`${sponsor.id}-${index}`}
-              className="flex-shrink-0 w-40 h-20 bg-background border border-border flex items-center justify-center hover:border-primary transition-colors"
+              className="flex-shrink-0 w-40 h-20 bg-background border border-border flex items-center justify-center hover:border-primary transition-colors p-4"
             >
-              <span className="text-muted-foreground text-xs uppercase tracking-wider">
-                {sponsor.name}
-              </span>
+              <img
+                src={sponsor.logo}
+                alt={sponsor.name}
+                className="max-w-full max-h-full object-contain"
+              />
             </div>
           ))}
         </div>
@@ -43,7 +58,7 @@ const SponsorSlider = () => {
           }
         }
         .animate-scroll {
-          animation: scroll 20s linear infinite;
+          animation: scroll 30s linear infinite;
         }
         .animate-scroll:hover {
           animation-play-state: paused;
