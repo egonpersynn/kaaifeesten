@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, Users, ChevronDown } from "lucide-react";
+import heroPraktisch from "@/assets/hero-praktisch.png";
 
 type DayKey = "vrijdag" | "zaterdag" | "zondag" | "maandag";
 
@@ -190,9 +191,17 @@ const Praktisch = () => {
       <Navbar />
       
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-primary">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground text-center tracking-tight">
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-foreground/60 z-10" />
+          <img
+            src={heroPraktisch}
+            alt="Praktische info sfeer"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="container mx-auto px-4 relative z-20">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-background text-center tracking-tight">
             Praktische Info
           </h1>
         </div>
