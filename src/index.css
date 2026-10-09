@@ -16,7 +16,7 @@
     --popover: 0 0% 98%;
     --popover-foreground: 0 0% 8%;
 
-    --primary: 220 98% 16%;
+    --primary: 221.25 97.56% 16.08%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 96%;
@@ -25,7 +25,7 @@
     --muted: 0 0% 94%;
     --muted-foreground: 0 0% 45%;
 
-    --accent: 220 98% 16%;
+    --accent: 221.25 97.56% 16.08%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -161,4 +161,92 @@
     opacity: 1;
     transform: scale(1);
   }
+}
+/* The Kaai: bold editorial type, real photography, sharp edges. */
+html { scroll-behavior: smooth; }
+body { font-size: 16px; }
+h1,h2,h3,h4,h5,h6 { letter-spacing: 0 !important; }
+.eyebrow { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .12em; }
+.brand-logo { width: 166px; height: 46px; object-fit: contain; }
+.welcome { min-height: 100svh; }
+.welcome-header { display: flex; justify-content: space-between; align-items: center; padding: 24px 5%; border-bottom: 1px solid hsl(var(--primary-foreground) / .2); }
+.welcome-intro { padding: 48px 5% 42px; display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: 20px; }
+.welcome-intro .eyebrow { grid-column: 1 / -1; }
+.welcome-intro h1 { font-size: 76px; font-weight: 700; line-height: .98; }
+.welcome-intro h1 em { font-weight: 400; }
+.welcome-intro > p:last-child { justify-self: end; padding-bottom: 8px; color: hsl(var(--primary-foreground) / .7); }
+.experience-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 2px; padding: 0 5%; }
+.experience { position: relative; height: 400px; overflow: hidden; color: hsl(var(--primary-foreground)); }
+.experience > img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s; }
+.experience:hover > img { transform: scale(1.045); }
+.experience-shade { position:absolute; inset:0; background: linear-gradient(180deg,hsl(var(--foreground) / .1) 20%,hsl(var(--foreground) / .85)); }
+.experience-top { position:absolute; top:24px; left:24px; right:24px; display:flex; justify-content:space-between; align-items:center; font-size:11px; text-transform:uppercase; }
+.experience-bottom { position:absolute; bottom:30px; left:28px; right:28px; }
+.experience-bottom h2 { font-size:42px; line-height:1.1; margin-bottom:8px; }
+.experience-bottom p { font-size:15px; color:hsl(var(--primary-foreground) / .75); }
+.experience-action { display:flex; justify-content:space-between; align-items:center; border-top:1px solid hsl(var(--primary-foreground) / .35); padding-top:16px; margin-top:28px; font-size:13px; }
+.welcome-footer { display:flex; justify-content:space-between; padding:30px 5%; font-size:12px; color:hsl(var(--primary-foreground) / .7); }
+.welcome-footer a { display:flex; gap:12px; align-items:center; }
+.page-banner,.event-hero { position:relative; overflow:hidden; padding:165px 0 70px; }
+.page-banner h1 { font-size:76px; line-height:1; max-width:950px; }
+.banner-photo { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.banner-shade { position:absolute; inset:0; background:linear-gradient(90deg,hsl(var(--foreground) / .72),hsl(var(--foreground) / .12)); }
+.event-hero { padding:170px 0 55px; }
+.event-hero h1 { font-size:88px; line-height:.98; }
+.event-hero h1 em { font-weight:400; }
+.event-hero-bottom { display:flex; justify-content:space-between; align-items:end; margin-top:45px; }
+.event-hero-bottom p { color:hsl(var(--primary-foreground) / .85); font-size:17px; }
+.event-strip { display:flex; justify-content:space-between; gap:20px; padding:22px 5%; font-size:13px; }
+.event-strip span { display:flex; gap:8px; align-items:center; }
+.story-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; }
+.story-grid h2 { font-size:58px; line-height:1.02; max-width:460px; }
+.story-grid .space-y-8 { font-size:17px; }
+.gallery-grid > div:first-child { grid-column:span 2; }
+.gallery-grid > div:first-child .aspect-\[4\/3\] { aspect-ratio: 2.7; }
+.photo-section h2 { font-size:58px; }
+.festival-intro { display:grid; grid-template-columns:1fr 1fr; gap:80px; padding-top:90px; padding-bottom:90px; }
+.festival-intro h2 { font-size:54px; line-height:1.05; margin-top:24px; }
+.site-footer .footer-title { font-size:60px; line-height:1; margin:32px 0; }
+.site-nav a { transition:opacity .2s; }
+.site-nav a:hover { opacity:.7; }
+.preloader { display:flex; align-items:center; justify-content:center; }
+.loader-corner { position:absolute; top:32px; left:5%; }
+.loader-center { display:flex; flex-direction:column; align-items:center; }
+.loader-tagline { font-style:italic; color:hsl(var(--muted-foreground)); margin:28px 0 50px; }
+.loader-meter { display:flex; width:256px; justify-content:space-between; align-items:center; margin-bottom:12px; }
+.loader-bottom { position:absolute; bottom:38px; display:flex; gap:32px; font-size:12px; color:hsl(var(--muted-foreground)); }
+main > section:not(.welcome-intro):not(.experience-grid):not(.page-banner):not(.event-hero) h2 { letter-spacing:0; }
+@media(max-width:1024px) {
+ .experience-bottom h2 { font-size:32px; }
+ .welcome-intro h1 { font-size:64px; }
+ .site-nav .brand-logo { width:135px; }
+ .site-nav .hidden.md\:flex { gap:14px; }
+ .site-nav .hidden.md\:flex a { font-size:12px; }
+}
+@media(max-width:767px) {
+ .welcome-header { padding:20px 6%; }
+ .brand-logo { width:140px; height:35px; }
+ .welcome-intro { display:block; padding:38px 6%; }
+ .welcome-intro h1 { font-size:52px; margin:18px 0; }
+ .welcome-intro > p:last-child { font-size:14px; }
+ .experience-grid { grid-template-columns:1fr; padding:0 6%; gap:12px; }
+ .experience { height:300px; }
+ .experience-bottom h2 { font-size:38px; }
+ .welcome-footer { padding:26px 6%; gap:24px; }
+ .page-banner { padding:145px 0 55px; }
+ .page-banner h1 { font-size:48px; }
+ .event-hero { padding:150px 0 45px; }
+ .event-hero h1 { font-size:54px; }
+ .event-hero-bottom p { font-size:14px; max-width:250px; }
+ .event-strip { flex-wrap:wrap; gap:12px; }
+ .story-grid,.festival-intro { grid-template-columns:1fr; gap:26px; }
+ .story-grid h2,.photo-section h2,.festival-intro h2 { font-size:40px; }
+ .story-grid > div:first-child { margin-bottom:0; }
+ .gallery-grid > div:first-child { grid-column:span 2; }
+ .site-footer .footer-title { font-size:48px; }
+ .loader-bottom { gap:20px; }
+}
+@media(prefers-reduced-motion:reduce) {
+ html { scroll-behavior:auto; }
+ *,*::before,*::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
 }

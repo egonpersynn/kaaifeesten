@@ -1,14 +1,15 @@
 const StorySection = () => {
   return (
-    <section className="py-32 bg-background">
+    <section id="ons-verhaal" className="story-section py-24 bg-background">
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto">
+        <div className="story-grid">
           <div className="mb-16">
             <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4 block">
               Sinds 1927
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight">
-              Ons Verhaal
+              Klein begonnen.
+              Groot geworden.
             </h2>
           </div>
 
