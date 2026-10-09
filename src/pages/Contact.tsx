@@ -1,3 +1,4 @@
+import PageBanner from "@/components/PageBanner";
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -48,17 +49,7 @@ const Contact = () => {
     <main className="min-h-screen bg-background">
       <Navbar />
       
-      {/* Hero */}
-      <section className="pt-32 pb-20 bg-primary">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground mb-4 tracking-tight">
-            Contact
-          </h1>
-          <p className="text-lg text-primary-foreground/70 max-w-2xl mx-auto font-light italic">
-            Heb je vragen? Neem gerust contact met ons op.
-          </p>
-        </div>
-      </section>
+      <PageBanner title="We horen je graag." eyebrow="Contact / De Kaaifeesten" description="Een vraag, een idee of gewoon een hallo?" />
 
       {/* Contact Section */}
       <section className="py-20 bg-background">

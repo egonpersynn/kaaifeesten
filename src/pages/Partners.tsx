@@ -1,3 +1,4 @@
+import PageBanner from "@/components/PageBanner";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -33,27 +34,7 @@ const Partners = () => {
     <main className="min-h-screen bg-background">
       <Navbar />
       
-      {/* Hero with image */}
-      <section className="relative h-[60vh] overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-foreground/60 z-10" />
-          <img
-            src={heroPartners}
-            alt="Partners achtergrond"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="absolute inset-0 flex items-center justify-center z-20">
-          <div className="text-center px-4">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-background mb-4 tracking-tight">
-              Onze Partners
-            </h1>
-            <p className="text-lg text-background/70 max-w-2xl mx-auto font-light italic">
-              Samen maken we De Kaaifeesten mogelijk
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageBanner title="Samen maken we het." eyebrow="Onze partners" description="Met steun van mensen en bedrijven die in de Kaai geloven." image={heroPartners} />
 
       {/* Partner Info */}
       <section className="py-24 bg-background">

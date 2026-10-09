@@ -10,19 +10,21 @@ const Navbar = () => {
   const location = useLocation();
 
   // Pages with dark hero sections where navbar should start light
-  const darkHeroPages = ["/", "/praktisch", "/rommelmarkt", "/partners", "/contact"];
+  const darkHeroPages = ["/", "/kaaifeesten", "/kaai-festival", "/praktisch", "/rommelmarkt", "/partners", "/contact"];
   const hasDarkHero = darkHeroPages.includes(location.pathname);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   const navLinks = [
-    { name: "Home", path: "/" },
+    { name: "Kaaifeesten", path: "/kaaifeesten" },
+    { name: "Kaai Festival", path: "/kaai-festival" },
     { name: "Praktisch", path: "/praktisch" },
     { name: "Rommelmarkt", path: "/rommelmarkt" },
     { name: "Partners", path: "/partners" },
@@ -36,10 +38,10 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`site-nav fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-background border-b border-border py-4"
-          : "bg-transparent py-6"
+          : "bg-primary/20 py-6"
       }`}
     >
       <div className="container mx-auto px-4">
@@ -49,18 +51,18 @@ const Navbar = () => {
             <img 
               src={kaaifeestenLogo} 
               alt="De Kaaifeesten" 
-              className={`h-10 w-auto ${showLightText ? '' : ''}`}
+              className="brand-logo"
               style={!showLightText ? { filter: 'brightness(0) saturate(100%) invert(7%) sepia(46%) saturate(4756%) hue-rotate(213deg) brightness(96%) contrast(104%)' } : {}}
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-10">
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-sm uppercase tracking-[0.1em] transition-colors duration-200 ${
+                className={`text-sm transition-colors duration-200 ${
                   isActive(link.path)
                     ? showLightText ? "text-background font-semibold" : "text-foreground font-semibold"
                     : showLightText ? "text-background/70 hover:text-background" : "text-muted-foreground hover:text-foreground"
@@ -82,6 +84,8 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
+            aria-label={isMobileMenuOpen ? "Menu sluiten" : "Menu openen"}
+            aria-expanded={isMobileMenuOpen}
             className={`md:hidden p-2 ${showLightText ? 'text-background' : 'text-foreground'}`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
@@ -91,13 +95,13 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-6 pb-6 animate-fade-in border-t border-border/20 pt-6">
+          <div className="md:hidden mt-6 p-6 bg-primary text-primary-foreground animate-fade-in">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`text-sm uppercase tracking-[0.1em] py-2 transition-colors ${
+                  className={`text-sm py-2 transition-colors ${
                     isActive(link.path)
                       ? showLightText ? "text-background font-semibold" : "text-foreground font-semibold"
                       : showLightText ? "text-background/70" : "text-muted-foreground"

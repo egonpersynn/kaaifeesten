@@ -32,11 +32,11 @@ const SponsorSlider = () => {
       </div>
       
       <div className="relative">
-        <div className="flex animate-scroll gap-12">
+        <div className="flex w-max animate-scroll gap-12">
           {[...sponsors, ...sponsors].map((sponsor, index) => (
             <div
               key={`${sponsor.id}-${index}`}
-              className="flex-shrink-0 w-40 h-20 bg-background border border-border flex items-center justify-center hover:border-primary transition-colors p-4"
+              className="flex-shrink-0 w-40 h-20 bg-background flex items-center justify-center hover:border-primary transition-colors p-4"
             >
               <img
                 src={sponsor.logo}
@@ -54,7 +54,7 @@ const SponsorSlider = () => {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-50%);
+            transform: translateX(calc(-50% - 24px));
           }
         }
         .animate-scroll {
