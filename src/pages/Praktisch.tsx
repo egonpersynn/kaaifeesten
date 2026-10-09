@@ -1,3 +1,4 @@
+import PageBanner from "@/components/PageBanner";
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -190,22 +191,7 @@ const Praktisch = () => {
     <main className="min-h-screen bg-background">
       <Navbar />
       
-      {/* Hero */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-foreground/60 z-10" />
-          <img
-            src={heroPraktisch}
-            alt="Praktische info sfeer"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="container mx-auto px-4 relative z-20">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-background text-center tracking-tight">
-            Praktische Info
-          </h1>
-        </div>
-      </section>
+      <PageBanner title="Goed om te weten." eyebrow="Jouw bezoek / praktisch" description="Alle informatie voor een fijn weekend op de Kaai." image={heroPraktisch} />
 
       {/* Info Boxes */}
       <section className="py-16 bg-background">
@@ -258,19 +244,19 @@ const Praktisch = () => {
             </div>
 
             {/* Day Buttons */}
-            <div className="grid grid-cols-4 gap-px bg-border border border-border mb-12">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-border border border-border mb-12">
               {days.map((day) => (
-                <button
+                <Button
                   key={day.key}
-                  onClick={() => setSelectedDay(selectedDay === day.key ? null : day.key)}
-                  className={`p-4 font-medium text-sm uppercase tracking-[0.1em] transition-all duration-200 ${
+                  onClick={() => setSelectedDay(day.key)}
+                  className={`h-auto p-4 font-medium text-sm uppercase tracking-[0.1em] transition-all duration-200 ${
                     selectedDay === day.key
                       ? "bg-primary text-primary-foreground"
                       : "bg-background text-foreground hover:bg-muted"
                   }`}
                 >
                   {day.label}
-                </button>
+                </Button>
               ))}
             </div>
 

@@ -1,3 +1,4 @@
+import PageBanner from "@/components/PageBanner";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -31,28 +32,7 @@ const Rommelmarkt = () => {
     <main className="min-h-screen bg-background">
       <Navbar />
       
-      {/* Hero */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-foreground/60 z-10" />
-          <img
-            src={heroRommelmarkt}
-            alt="Rommelmarkt sfeer"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="container mx-auto px-4 text-center relative z-20">
-          <span className="inline-block text-xs uppercase tracking-[0.3em] text-background/60 mb-4">
-            Zondag 4 oktober 2026
-          </span>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-background mb-4 tracking-tight">
-            Grootste Rommelmarkt van Vlaanderen
-          </h1>
-          <p className="text-lg text-background/70 max-w-2xl mx-auto font-light italic">
-            Boek hier jouw standplaats voor 2026
-          </p>
-        </div>
-      </section>
+      <PageBanner title="Zoek. Vind. Verwonder." eyebrow="Grootste rommelmarkt van Vlaanderen" description="Boek hier jouw standplaats voor 2026." image={heroRommelmarkt} />
 
       {/* Info Section */}
       <section className="py-16 bg-secondary">

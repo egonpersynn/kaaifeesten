@@ -4,7 +4,9 @@ import kaaifeestenLogo from "@/assets/kaaifeesten-logo.png";
 
 const Footer = () => {
   const navLinks = [
-    { name: "Home", path: "/" },
+    { name: "Kies je beleving", path: "/" },
+    { name: "Kaaifeesten", path: "/kaaifeesten" },
+    { name: "Kaai Festival", path: "/kaai-festival" },
     { name: "Praktisch", path: "/praktisch" },
     { name: "Rommelmarkt", path: "/rommelmarkt" },
     { name: "Partners", path: "/partners" },
@@ -12,7 +14,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer className="site-footer bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 py-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
           {/* Logo & Description */}
@@ -20,8 +22,9 @@ const Footer = () => {
             <img 
               src={kaaifeestenLogo} 
               alt="De Kaaifeesten" 
-              className="h-12 w-auto"
+              className="brand-logo"
             />
+            <h2 className="footer-title">Tot op<br /><em>de Kaai.</em></h2>
             <p className="text-primary-foreground/60 leading-relaxed font-light">
               De grootste rommelmarkt van Vlaanderen. Een traditioneel buurtfeest 
               waar jong en oud samenkomt in het hartje van Eeklo.

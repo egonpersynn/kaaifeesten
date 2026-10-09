@@ -1,72 +1,35 @@
 import { useState, useEffect } from 'react';
 import logo from '@/assets/kaaifeesten-logo.png';
 
-interface PreloaderProps {
-  onComplete: () => void;
-}
-
-const Preloader = ({ onComplete }: PreloaderProps) => {
+interface PreloaderProps { onComplete: () => void }
+export default function Preloader({ onComplete }: PreloaderProps) {
   const [progress, setProgress] = useState(0);
-
   useEffect(() => {
-    const duration = 2000; // 2 seconds
-    const interval = 20; // Update every 20ms
-    const steps = duration / interval;
-    const increment = 100 / steps;
-
-    const timer = setInterval(() => {
-      setProgress((prev) => {
-        const next = prev + increment;
-        if (next >= 100) {
-          clearInterval(timer);
-          setTimeout(onComplete, 300); // Small delay before hiding
-          return 100;
-        }
-        return next;
-      });
-    }, interval);
-
-    return () => clearInterval(timer);
+    const start = performance.now();
+    let frame = 0;
+    let timer: ReturnType<typeof setTimeout>;
+    const tick = (now: number) => {
+      const value = Math.min(100, (now - start) / 16);
+      setProgress(value);
+      if (value < 100) frame = requestAnimationFrame(tick);
+      else timer = setTimeout(onComplete, 250);
+    };
+    frame = requestAnimationFrame(tick);
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => { cancelAnimationFrame(frame); clearTimeout(timer); document.body.style.overflow = previous; };
   }, [onComplete]);
-
-  return (
-    <div className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-background">
-      <div className="flex flex-col items-center gap-8">
-        <div className="relative w-48 h-48 md:w-64 md:h-64">
-          {/* Base logo at 50% opacity */}
-          <img
-            src={logo}
-            alt="Kaaifeesten Logo"
-            className="absolute inset-0 w-full h-full object-contain brightness-0 opacity-50"
-          />
-          {/* Overlay logo that fills from bottom to top */}
-          <div 
-            className="absolute inset-0 overflow-hidden"
-            style={{ 
-              clipPath: `inset(${100 - progress}% 0 0 0)` 
-            }}
-          >
-            <img
-              src={logo}
-              alt="Kaaifeesten Logo"
-              className="w-full h-full object-contain brightness-0"
-            />
-          </div>
-        </div>
-        <div className="flex flex-col items-center gap-2">
-          <span className="text-2xl md:text-3xl font-bold text-foreground tabular-nums">
-            {Math.round(progress)}%
-          </span>
-          <div className="w-48 h-1 bg-muted rounded-full overflow-hidden">
-            <div 
-              className="h-full bg-primary transition-all duration-100 ease-out"
-              style={{ width: `${progress}%` }}
-            />
-          </div>
-        </div>
+  return <div className="preloader fixed inset-0 z-[9999] bg-background text-foreground" role="status" aria-label="De Kaai wordt geopend">
+    <span className="loader-corner eyebrow">Eeklo / sinds 1927</span>
+    <div className="loader-center">
+      <div className="relative w-64 h-24">
+        <img src={logo} alt="Kaaifeesten" className="absolute inset-0 w-full h-full object-contain brightness-0 opacity-50" />
+        <div className="absolute inset-0" style={{ clipPath: `inset(${100-progress}% 0 0 0)` }}><img src={logo} alt="" className="w-full h-full object-contain brightness-0" /></div>
       </div>
+      <p className="loader-tagline">Even landen. Dan beleven.</p>
+      <div className="loader-meter"><span className="eyebrow text-primary">Tot op de Kaai</span><span className="tabular-nums text-primary">{Math.round(progress)}%</span></div>
+      <div className="h-1 w-64 bg-muted overflow-hidden"><div className="h-full bg-primary" style={{ width: `${progress}%` }} /></div>
     </div>
-  );
-};
-
-export default Preloader;
+    <div className="loader-bottom"><span>Kaaifeesten</span><span>Kaai Festival</span><span>Rommelmarkt</span></div>
+  </div>;
+}

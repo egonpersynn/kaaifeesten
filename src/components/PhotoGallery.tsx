@@ -34,18 +34,18 @@ const PhotoGallery = () => {
   ];
 
   return (
-    <section className="py-32 bg-secondary">
+    <section className="photo-section py-24 bg-secondary">
       <div className="container mx-auto px-4">
         <div className="mb-16">
           <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4 block">
             Sfeerbeelden
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight">
-            Vorige Edities
+            Dit was de Kaai.
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-1">
+        <div className="gallery-grid grid grid-cols-2 md:grid-cols-3 gap-3">
           {photos.map((photo, index) => (
             <div
               key={index}
@@ -58,7 +58,7 @@ const PhotoGallery = () => {
                   className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
                 />
               </div>
-              <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/20 transition-colors duration-300" />
+
             </div>
           ))}
         </div>
