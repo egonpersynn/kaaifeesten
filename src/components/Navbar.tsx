@@ -83,14 +83,14 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
+          <Button variant="ghost" size="icon"
             aria-label={isMobileMenuOpen ? "Menu sluiten" : "Menu openen"}
             aria-expanded={isMobileMenuOpen}
             className={`md:hidden p-2 ${showLightText ? 'text-background' : 'text-foreground'}`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          </Button>
         </div>
 
         {/* Mobile Navigation */}
@@ -101,11 +101,7 @@ const Navbar = () => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`text-sm py-2 transition-colors ${
-                    isActive(link.path)
-                      ? showLightText ? "text-background font-semibold" : "text-foreground font-semibold"
-                      : showLightText ? "text-background/70" : "text-muted-foreground"
-                  }`}
+                  className={`text-sm py-2 transition-colors ${isActive(link.path) ? "text-primary-foreground font-semibold" : "text-primary-foreground/70"}`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.name}

@@ -1,4 +1,3 @@
-@import url('https://fonts.cdnfonts.com/css/tt-commons');
 
 @tailwind base;
 @tailwind components;
@@ -168,15 +167,15 @@ body { font-size: 16px; }
 h1,h2,h3,h4,h5,h6 { letter-spacing: 0 !important; }
 .eyebrow { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .12em; }
 .brand-logo { width: 166px; height: 46px; object-fit: contain; }
-.welcome { min-height: 100svh; }
+.welcome { min-height: 100svh; display:flex; flex-direction:column; }
 .welcome-header { display: flex; justify-content: space-between; align-items: center; padding: 24px 5%; border-bottom: 1px solid hsl(var(--primary-foreground) / .2); }
 .welcome-intro { padding: 48px 5% 42px; display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: 20px; }
 .welcome-intro .eyebrow { grid-column: 1 / -1; }
 .welcome-intro h1 { font-size: 76px; font-weight: 700; line-height: .98; }
 .welcome-intro h1 em { font-weight: 400; }
 .welcome-intro > p:last-child { justify-self: end; padding-bottom: 8px; color: hsl(var(--primary-foreground) / .7); }
-.experience-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 2px; padding: 0 5%; }
-.experience { position: relative; height: 400px; overflow: hidden; color: hsl(var(--primary-foreground)); }
+.experience-grid { display: grid; flex:1; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 2px; padding: 0 5%; }
+.experience { position: relative; min-height: 400px; overflow: hidden; color: hsl(var(--primary-foreground)); }
 .experience > img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s; }
 .experience:hover > img { transform: scale(1.045); }
 .experience-shade { position:absolute; inset:0; background: linear-gradient(180deg,hsl(var(--foreground) / .1) 20%,hsl(var(--foreground) / .85)); }
@@ -230,7 +229,7 @@ main > section:not(.welcome-intro):not(.experience-grid):not(.page-banner):not(.
  .welcome-intro h1 { font-size:52px; margin:18px 0; }
  .welcome-intro > p:last-child { font-size:14px; }
  .experience-grid { grid-template-columns:1fr; padding:0 6%; gap:12px; }
- .experience { height:300px; }
+ .experience { height:300px; min-height:300px; }
  .experience-bottom h2 { font-size:38px; }
  .welcome-footer { padding:26px 6%; gap:24px; }
  .page-banner { padding:145px 0 55px; }

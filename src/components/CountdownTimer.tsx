@@ -8,7 +8,7 @@ interface TimeLeft {
 }
 
 const CountdownTimer = () => {
-  const targetDate = new Date("2026-10-02T19:00:00");
+  const targetDate = new Date("2026-10-02T19:00:00+02:00");
 
   const calculateTimeLeft = (): TimeLeft => {
     const difference = targetDate.getTime() - new Date().getTime();
@@ -41,6 +41,8 @@ const CountdownTimer = () => {
     { value: timeLeft.minutes, label: "M" },
     { value: timeLeft.seconds, label: "S" },
   ];
+
+  if (new Date() >= targetDate) return <p className="eyebrow text-primary-foreground/70">Editie 2026 · 2 — 5 oktober</p>;
 
   return (
     <div className="flex justify-center items-baseline gap-2 md:gap-4">
