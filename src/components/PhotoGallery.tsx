@@ -1,36 +1,38 @@
-import gallery1 from "@/assets/gallery-1.png";
-import gallery2 from "@/assets/gallery-2.png";
-import gallery3 from "@/assets/gallery-3.png";
-import gallery4 from "@/assets/gallery-4.png";
-import gallery5 from "@/assets/gallery-5.png";
-import gallery6 from "@/assets/gallery-6.png";
+import gallery1 from "@/assets/edities/20261004_Kaaifeesten_2026-15.jpg.asset.json";
+import gallery2 from "@/assets/edities/20261003_Kaaifeesten_2026-10.jpg.asset.json";
+import gallery3 from "@/assets/edities/20261003_Kaaifeesten_2026-15.jpg.asset.json";
+import gallery4 from "@/assets/edities/20261004_Kaaifeesten_2026-29.jpg.asset.json";
+import gallery5 from "@/assets/edities/20261004_Kaaifeesten_2026-39.jpg.asset.json";
+import gallery6 from "@/assets/edities/20261004_Kaaifeesten_2026-40.jpg.asset.json";
+import gallery7 from "@/assets/edities/20261004_Kaaifeesten_2026-52.jpg.asset.json";
 
 const PhotoGallery = () => {
   const photos = [
     {
-      src: gallery1,
-      alt: "DJ op het podium",
+      src: gallery1.url,
+      alt: "Bezoekers tussen de rommelmarktkramen in Eeklo",
     },
     {
-      src: gallery2,
-      alt: "Bezoekers en families",
+      src: gallery2.url,
+      alt: "Vrienden vieren samen de Kaaifeesten in de tent",
     },
     {
-      src: gallery3,
-      alt: "Live muziek",
+      src: gallery3.url,
+      alt: "DJ achter de draaitafels in een volle feesttent",
     },
     {
-      src: gallery5,
-      alt: "Feestend publiek",
+      src: gallery4.url,
+      alt: "Dansende bezoekers tijdens de Kaaifeesten",
     },
     {
-      src: gallery4,
-      alt: "Zanger op het podium",
+      src: gallery5.url,
+      alt: "Vriendinnen genieten van de sfeer in de feesttent",
     },
     {
-      src: gallery6,
-      alt: "Seniorennamiddag",
+      src: gallery6.url,
+      alt: "Optreden voor het publiek in de feesttent",
     },
+    { src: gallery7.url, alt: "Standhouders en bezoekers op de rommelmarkt" },
   ];
 
   return (

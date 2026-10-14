@@ -73,11 +73,13 @@ const Navbar = () => {
               href="https://tickets.example.com"
               target="_blank"
               rel="noopener noreferrer"
+              className={`text-sm ${showLightText ? "text-background/70 hover:text-background" : "text-muted-foreground hover:text-foreground"}`}
             >
-              <Button variant={isScrolled ? "default" : "outline"} size="sm" className={`text-sm px-6 ${showLightText && 'border-background text-background hover:bg-background hover:text-foreground'}`}>
-                Tickets
-              </Button>
+              Tickets
             </a>
+            <Button asChild variant={isScrolled ? "default" : "outline"} size="sm" className={`text-sm px-6 ${showLightText ? 'border-background text-background hover:bg-background hover:text-foreground' : ''}`}>
+              <Link to="/rommelmarkt#aanmelden">Aanmelden</Link>
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -109,12 +111,13 @@ const Navbar = () => {
                 href="https://tickets.example.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2"
+                className="text-sm py-2 text-primary-foreground/70"
               >
-                <Button variant="default" className="w-full uppercase tracking-[0.15em] text-xs">
-                  Tickets
-                </Button>
+                Tickets
               </a>
+              <Button asChild variant="outline" className="w-full border-primary-foreground text-primary-foreground bg-transparent">
+                <Link to="/rommelmarkt#aanmelden" onClick={() => setIsMobileMenuOpen(false)}>Aanmelden</Link>
+              </Button>
             </div>
           </div>
         )}
