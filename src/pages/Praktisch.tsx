@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, type KeyboardEvent } from "react";
 import { Link } from "react-router-dom";
 import PageBanner from "@/components/PageBanner";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Calendar, MapPin, ArrowUpRight } from "lucide-react";
+import { Calendar, MapPin, ArrowUpRight, Ticket } from "lucide-react";
 import heroPraktisch from "@/assets/hero-praktisch.png";
 
 const days = [
@@ -31,23 +31,36 @@ const days = [
 export default function Praktisch() {
   const [selectedDay, setSelectedDay] = useState("vrijdag");
   const day = days.find((item) => item.key === selectedDay) ?? days[0];
-  return <main className="min-h-screen bg-background">
+  const handleTabKey = (event: KeyboardEvent<HTMLButtonElement>, index: number) => {
+    const keys = ["ArrowLeft", "ArrowRight", "Home", "End"];
+    if (!keys.includes(event.key)) return;
+    event.preventDefault();
+    const nextIndex = event.key === "Home" ? 0 : event.key === "End" ? days.length - 1 : (index + (event.key === "ArrowRight" ? 1 : -1) + days.length) % days.length;
+    const nextDay = days[nextIndex];
+    if (!nextDay) return;
+    setSelectedDay(nextDay.key);
+    document.getElementById(`tab-${nextDay.key}`)?.focus();
+  };
+  return <main className="practical-page min-h-screen bg-background">
     <Navbar />
-    <PageBanner title="Goed om te weten." eyebrow="Jouw bezoek / praktisch" description="Alle informatie voor een fijn weekend op de Kaai." image={heroPraktisch} />
+    <PageBanner title="Praktische info" eyebrow="De Kaaifeesten / jouw bezoek" image={heroPraktisch} />
     <section className="visit-details container">
       <div><Calendar size={21} strokeWidth={1.4} /><p><strong>2 — 5 oktober 2026</strong><span>Eerste weekend van oktober</span></p></div>
       <div><MapPin size={21} strokeWidth={1.4} /><p><strong>Gebr. Van De Woestyneplein</strong><span>9900 Eeklo</span></p></div>
     </section>
-    <section className="programme-section container">
-      <div className="section-heading"><div><p className="eyebrow text-primary mb-5">Vier dagen op de Kaai</p><h2>Het programma<span className="text-muted-foreground"> / 2026</span></h2></div><span className="text-sm text-muted-foreground">02 — 05 oktober</span></div>
+    <section className="practical-programme bg-secondary">
+      <div className="programme-section container">
+      <div className="section-heading"><div><p className="eyebrow text-primary mb-4">2 — 5 oktober 2026</p><h2>Programma per dag</h2></div></div>
       <div className="programme-tabs" role="tablist" aria-label="Programma per dag">
-        {days.map((item) => <Button key={item.key} variant="ghost" role="tab" id={`tab-${item.key}`} aria-selected={selectedDay === item.key} aria-controls="day-programme" className={`programme-tab ${selectedDay === item.key ? "is-selected" : ""}`} onClick={() => setSelectedDay(item.key)}><span className="tab-day">{item.label}</span><ArrowUpRight size={20} /></Button>)}
+        {days.map((item, index) => <Button key={item.key} variant="ghost" role="tab" id={`tab-${item.key}`} aria-selected={selectedDay === item.key} aria-controls="day-programme" tabIndex={selectedDay === item.key ? 0 : -1} onKeyDown={(event) => handleTabKey(event, index)} className={`programme-tab ${selectedDay === item.key ? "is-selected" : ""}`} onClick={() => setSelectedDay(item.key)}><span className="tab-day">{item.label}</span></Button>)}
       </div>
       <div id="day-programme" role="tabpanel" aria-labelledby={`tab-${day.key}`} className="day-programme" key={day.key}>
+        <div className="practical-day-heading"><h3>{day.label} {Number(day.date)} oktober 2026</h3><span><Ticket size={16} strokeWidth={1.5} />{day.admission}</span></div>
         <div className="programme-events">{day.events.map((event, index) => <article className="programme-event" key={event.title}><div className="event-time"><span>{event.time}</span>{"end" in event && <small>{event.end}</small>}</div><div><span className="event-number">0{index + 1}</span><h4>{event.title}</h4><p>{event.description}</p></div></article>)}
           {day.key === "zaterdag" && <Button asChild className="mt-8" size="lg"><a href="https://tickets.example.com" target="_blank" rel="noopener noreferrer">Tickets zaterdagavond<ArrowUpRight /></a></Button>}
           {day.key === "zondag" && <Button asChild variant="outline" className="mt-8" size="lg"><Link to="/rommelmarkt">Bekijk het rommelmarktplan<ArrowUpRight /></Link></Button>}
         </div>
+      </div>
       </div>
     </section>
     <Footer />

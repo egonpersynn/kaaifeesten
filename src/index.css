@@ -345,6 +345,43 @@ body { line-height: 1.55; }
 .photo-section h2 { font-weight: 500; font-size: 48px; }
 .site-footer .footer-title { font-weight: 500; }
 .site-footer [class*="tracking-"] { letter-spacing: 0; }
+.practical-page .page-banner { padding: 132px 0 64px; text-align: center; }
+.practical-page .page-banner .eyebrow { margin-bottom: 18px; }
+.practical-page .page-banner .container > div { justify-content: center; }
+.practical-page .page-banner h1 { font-size: 64px; font-weight: 600; }
+.practical-page .page-banner .container > div > svg { display: none; }
+.practical-page .visit-details { max-width: 960px; padding: 50px 32px; border-bottom: 0; }
+.practical-page .visit-details > div { flex-direction: column; text-align: center; gap: 14px; padding: 20px 24px; }
+.practical-page .visit-details strong { font-size: 17px; font-weight: 600; }
+.practical-programme .programme-section { max-width: 960px; padding-top: 60px; padding-bottom: 72px; }
+.practical-programme .section-heading { justify-content: center; text-align: center; margin-bottom: 36px; }
+.practical-programme .section-heading h2 { font-size: 34px; font-weight: 600; }
+.practical-programme .programme-tabs { border: 1px solid hsl(var(--border)); }
+.practical-programme .programme-tab { height: 60px; align-items: center; border-top: 0; background: hsl(var(--background)); padding: 16px; }
+.practical-programme .programme-tab.is-selected { background: hsl(var(--primary)); }
+.practical-programme .tab-day { font-size: 15px; }
+.practical-programme .day-programme { padding-top: 40px; }
+.practical-day-heading { display: flex; align-items: start; justify-content: space-between; gap: 24px; margin-bottom: 26px; }
+.practical-day-heading h3 { font-size: 28px; line-height: 1.25; font-weight: 600; }
+.practical-day-heading > span { display: flex; align-items: center; gap: 8px; font-size: 12px; color: hsl(var(--primary)); padding-top: 8px; flex-shrink: 0; }
+.practical-programme .programme-event { grid-template-columns: 104px 1fr; padding: 24px 0; gap: 24px; }
+.practical-programme .programme-event h4 { font-size: 22px; }
+.practical-programme .event-number { display: none; }
+@media(max-width:767px) {
+ .practical-page .page-banner { padding: 130px 0 48px; }
+ .practical-page .page-banner h1 { font-size: 40px; }
+ .practical-page .visit-details { padding: 18px 24px; }
+ .practical-page .visit-details > div { padding: 22px 0; gap: 10px; }
+ .practical-programme .programme-section { padding: 42px 24px 54px; }
+ .practical-programme .section-heading h2 { font-size: 28px; }
+ .practical-programme .programme-tab { height: 54px; }
+ .practical-programme .day-programme { padding-top: 28px; }
+ .practical-day-heading { flex-direction: column; gap: 12px; margin-bottom: 22px; }
+ .practical-day-heading h3 { font-size: 24px; }
+ .practical-day-heading > span { padding-top: 0; }
+ .practical-programme .programme-event { grid-template-columns: 68px 1fr; gap: 14px; }
+ .practical-programme .programme-event h4 { font-size: 20px; }
+}
 @media(max-width:1024px) {
  .page-banner h1 { font-size: 58px; }
  .event-hero h1 { font-size: 72px; }
