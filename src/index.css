@@ -424,3 +424,92 @@ body { line-height: 1.55; }
  .story-grid { gap: 30px; }
  .story-grid h2,.photo-section h2 { font-size: 38px; }
 }
+
+/* Reference-wide refinement: familiar structure, calmer spacing and blue detail. */
+.container { width: 100%; max-width: 1200px; padding-left: 32px; padding-right: 32px; }
+.site-nav > .container { max-width: 1440px; }
+.site-nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: 7px; text-decoration-thickness: 1px; }
+.site-nav .brand-logo { width: 158px; }
+.event-hero { display: flex; align-items: center; min-height: 540px; padding: 145px 0 78px; text-align: center; }
+.event-hero .banner-shade { background: linear-gradient(180deg,hsl(var(--foreground) / .48),hsl(var(--foreground) / .63)); }
+.hero-date { display: inline-block; padding: 9px 20px; border: 1px solid hsl(var(--primary-foreground) / .4); margin-bottom: 28px; }
+.event-hero h1 { font-size: 76px; text-transform: uppercase; font-weight: 600; line-height: 1.08; }
+.hero-description { margin: 20px 0 0; font-size: 20px; color: hsl(var(--primary-foreground) / .85); }
+.hero-countdown { display: flex; justify-content: center; margin-top: 36px; }
+.story-section { scroll-margin-top: 100px; padding-top: 88px; padding-bottom: 88px; }
+.story-section > .container { max-width: 850px; }
+.story-grid { display: block; }
+.story-grid > div:first-child { margin-bottom: 36px; }
+.story-grid h2 { font-size: 46px; font-weight: 600; }
+.story-grid .space-y-8 { font-size: 17px; line-height: 1.8; }
+.story-grid [class*="tracking-"] { letter-spacing: 0; }
+.photo-section { padding-top: 80px; padding-bottom: 88px; }
+.photo-section h2 { font-size: 44px; font-weight: 600; }
+.photo-section [class*="tracking-"] { letter-spacing: 0; }
+.photo-section .mb-16 { margin-bottom: 36px; }
+.gallery-grid { gap: 8px; }
+.gallery-grid > div:first-child { grid-column: span 3; }
+.gallery-grid > div:first-child .aspect-\[4\/3\] { aspect-ratio: 3; }
+.page-banner { min-height: 340px; padding: 144px 0 68px; text-align: center; }
+.page-banner .container > div { justify-content: center; }
+.page-banner .container > div > svg { display: none; }
+.page-banner h1 { font-size: 60px; font-weight: 600; }
+.page-banner .eyebrow { margin-bottom: 20px; }
+.page-banner .container > p:last-child { margin-left: auto; margin-right: auto; }
+.page-banner .banner-shade { background: linear-gradient(180deg,hsl(var(--foreground) / .48),hsl(var(--foreground) / .56)); }
+.booking-section { max-width: 960px; }
+.booking-phases article { position: relative; padding-left: 42px; }
+.booking-phases .phase-index { position: absolute; top: 35px; left: 0; margin: 0; }
+.booking-phases h3 { font-size: 23px; }
+.booking-phases article > p:last-child { max-width: 760px; }
+.market-layout { gap: 48px; }
+.market-section .section-heading h2 { font-size: 40px; }
+.street-row { transition: background-color .2s; }
+.street-row:hover { background: hsl(var(--primary) / .04); }
+.partners-page section:not(.page-banner) h2 { font-size: 36px; font-weight: 600; line-height: 1.2; }
+.partners-page [class*="tracking-"] { letter-spacing: 0; }
+.partners-page section.bg-secondary .flex.flex-wrap { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 12px; }
+.partners-page section.bg-secondary .flex.flex-wrap > div { width: 100%; height: 140px; }
+.partners-page section.bg-secondary .flex.flex-wrap > div img { max-height: 86px; }
+.contact-layout { gap: 64px; align-items: start; }
+.contact-form h2 { font-weight: 600; }
+.contact-form [class*="tracking-"] { letter-spacing: 0; }
+.contact-form label { text-transform: none; font-size: 13px; }
+.contact-form input { height: 46px; }
+.contact-aside { border-top: 3px solid hsl(var(--primary)); }
+.contact-aside svg { color: hsl(var(--primary)); }
+.contact-aside a { overflow-wrap: anywhere; }
+.site-footer .text-primary-foreground\/60 { color: hsl(var(--primary-foreground) / .78); }
+.site-footer .text-primary-foreground\/40 { color: hsl(var(--primary-foreground) / .6); }
+@media(max-width:1024px) {
+ .site-nav .brand-logo { width: 138px; }
+ .contact-layout { gap: 36px; }
+}
+@media(max-width:767px) {
+ .container { padding-left: 24px; padding-right: 24px; }
+ .event-hero { min-height: 470px; padding: 142px 0 64px; }
+ .event-hero h1 { font-size: 42px; overflow-wrap: normal; }
+ .hero-description { font-size: 17px; max-width: 320px; margin-left: auto; margin-right: auto; }
+ .hero-date { padding: 8px 14px; margin-bottom: 22px; }
+ .hero-countdown { margin-top: 30px; }
+ .story-section,.photo-section { padding-top: 54px; padding-bottom: 56px; }
+ .story-grid h2,.photo-section h2 { font-size: 34px; }
+ .story-grid .space-y-8 { font-size: 16px; }
+ .story-grid > div:first-child { margin-bottom: 28px; }
+ .page-banner { min-height: 310px; padding: 140px 0 56px; }
+ .page-banner h1 { font-size: 38px; }
+ .gallery-grid > div:first-child { grid-column: span 2; }
+ .gallery-grid > div:first-child .aspect-\[4\/3\] { aspect-ratio: 1.8; }
+ .booking-phases article { padding-left: 30px; }
+ .booking-phases h3 { font-size: 21px; }
+ .market-section .section-heading h2 { font-size: 32px; }
+ .partners-page section:not(.page-banner) { padding-top: 56px; padding-bottom: 56px; }
+ .partners-page section:not(.page-banner) h2 { font-size: 30px; }
+ .partners-page section.bg-secondary .flex.flex-wrap { grid-template-columns: repeat(2,minmax(0,1fr)); }
+ .partners-page section.bg-secondary .flex.flex-wrap > div { height: 120px; }
+ .contact-layout { gap: 40px; }
+ .contact-page > section:not(.page-banner) { padding-top: 52px; padding-bottom: 56px; }
+ .site-footer > .container { padding-top: 56px; padding-bottom: 36px; }
+ .site-footer .grid { gap: 36px; }
+ .site-footer .mt-20 { margin-top: 48px; }
+}

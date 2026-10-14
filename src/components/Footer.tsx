@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MapPin, Mail } from "lucide-react";
+import { MapPin, Mail, Phone } from "lucide-react";
 import kaaifeestenLogo from "@/assets/kaaifeesten-logo.png";
 
 const Footer = () => {
@@ -20,7 +20,7 @@ const Footer = () => {
             <img 
               src={kaaifeestenLogo} 
               alt="De Kaaifeesten" 
-              className="brand-logo brand-logo-ink"
+              className="brand-logo"
             />
             <p className="text-primary-foreground/60 leading-relaxed font-light">
               De grootste rommelmarkt van Vlaanderen. Een traditioneel buurtfeest 
@@ -67,6 +67,10 @@ const Footer = () => {
                 >
                   dirkmussche7@telenet.be
                 </a>
+              </div>
+              <div className="flex items-center gap-4">
+                <Phone className="w-4 h-4 text-primary-foreground/40 flex-shrink-0" />
+                <a href="tel:+32476463092" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors text-sm">0476 46 30 92</a>
               </div>
             </div>
           </div>
