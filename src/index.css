@@ -15,24 +15,24 @@
     --popover: 0 0% 98%;
     --popover-foreground: 0 0% 8%;
 
-    --primary: 221.25 97.56% 16.08%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 195 100% 35.7%;
+    --primary-foreground: 0 0% 8%;
 
-    --secondary: 0 0% 96%;
+    --secondary: 195 14% 97%;
     --secondary-foreground: 0 0% 8%;
 
     --muted: 0 0% 94%;
     --muted-foreground: 0 0% 45%;
 
-    --accent: 221.25 97.56% 16.08%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 195 100% 35.7%;
+    --accent-foreground: 0 0% 8%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 88%;
+    --border: 195 10% 87%;
     --input: 0 0% 88%;
-    --ring: 220 98% 16%;
+    --ring: 195 100% 35.7%;
 
     --radius: 0;
 
@@ -248,4 +248,142 @@ main > section:not(.welcome-intro):not(.experience-grid):not(.page-banner):not(.
 @media(prefers-reduced-motion:reduce) {
  html { scroll-behavior:auto; }
  *,*::before,*::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+}
+
+/* Refined editorial festival identity. */
+:root {
+  --photo-overlay: linear-gradient(90deg, hsl(var(--foreground) / .78), hsl(var(--foreground) / .1));
+  --brand-blue-filter: brightness(0) saturate(100%) invert(42%) sepia(75%) saturate(1886%) hue-rotate(160deg) brightness(90%) contrast(103%);
+}
+body { line-height: 1.55; }
+.eyebrow { letter-spacing: 0; }
+.brand-logo-blue { filter: var(--brand-blue-filter); }
+.brand-logo-ink { filter: brightness(0); }
+.site-nav { backdrop-filter: blur(14px); }
+.site-nav a { letter-spacing: 0; }
+.site-nav .brand-logo { width: 175px; }
+.banner-shade { background: var(--photo-overlay); }
+.page-banner { padding: 178px 0 82px; }
+.page-banner h1 { font-size: 68px; font-weight: 500; line-height: 1.04; max-width: 920px; }
+.page-banner .eyebrow, .page-banner > .container > p:last-child { color: hsl(var(--background) / .85); }
+.page-banner .banner-photo { object-position: center 48%; }
+.event-hero { padding: 175px 0 64px; }
+.event-hero h1 { font-size: 86px; font-weight: 600; line-height: 1.03; }
+.hero-subtitle { display: block; font-size: 44px; font-weight: 400; margin-top: 22px; }
+.event-hero-bottom { margin-top: 65px; }
+.event-hero-bottom p { color: hsl(var(--background) / .8); }
+.event-hero .eyebrow { color: hsl(var(--background) / .8); }
+.event-strip { padding-top: 25px; padding-bottom: 25px; }
+.section-heading { display: flex; align-items: end; justify-content: space-between; gap: 28px; margin-bottom: 48px; }
+.section-heading h2 { font-size: 46px; line-height: 1.1; font-weight: 500; }
+.visit-details { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); padding-top: 38px; padding-bottom: 38px; border-bottom: 1px solid hsl(var(--border)); }
+.visit-details > div { display: flex; align-items: center; gap: 18px; padding: 0 24px; border-right: 1px solid hsl(var(--border)); }
+.visit-details > div:first-child { padding-left: 0; }
+.visit-details > div:last-child { border: 0; }
+.visit-details svg { color: hsl(var(--primary)); flex-shrink: 0; }
+.visit-details strong { display: block; font-size: 15px; font-weight: 500; }
+.visit-details span { display: block; font-size: 13px; color: hsl(var(--muted-foreground)); margin-top: 4px; }
+.programme-section { padding-top: 80px; padding-bottom: 100px; }
+.programme-tabs { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); border-bottom: 1px solid hsl(var(--border)); }
+.programme-tab { position: relative; height: 134px; padding: 20px 28px; display: flex; flex-direction: column; align-items: start; justify-content: space-between; border: 0; border-top: 1px solid hsl(var(--border)); color: hsl(var(--muted-foreground)); background: hsl(var(--secondary)); }
+.programme-tab + .programme-tab { border-left: 1px solid hsl(var(--border)); }
+.programme-tab:hover { background: hsl(var(--muted)); color: hsl(var(--foreground)); }
+.programme-tab.is-selected { background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); border-color: hsl(var(--primary)); }
+.programme-tab > svg { position: absolute; right: 24px; top: 22px; }
+.tab-day { font-size: 14px; font-weight: 500; }
+.tab-date { font-size: 40px; line-height: 1; font-weight: 400; display: flex; align-items: baseline; gap: 12px; }
+.tab-date > span { font-size: 12px; font-weight: 400; }
+.day-programme { display: grid; grid-template-columns: .8fr 1.2fr; gap: 80px; padding-top: 56px; animation: fadeIn .3s ease-out; }
+.day-editorial h3 { font-size: 48px; line-height: 1.1; font-weight: 500; margin: 22px 0; max-width: 360px; }
+.day-admission { display: flex; align-items: center; gap: 10px; font-size: 13px; color: hsl(var(--muted-foreground)); }
+.day-admission svg { color: hsl(var(--primary)); }
+.programme-photo { width: 100%; aspect-ratio: 1.65; object-fit: cover; margin-top: 34px; }
+.programme-event { display: grid; grid-template-columns: 90px 1fr; gap: 22px; border-top: 1px solid hsl(var(--border)); padding: 27px 0; }
+.event-time { color: hsl(var(--primary)); font-size: 20px; font-weight: 500; }
+.event-time small { display: block; font-size: 12px; margin-top: 4px; color: hsl(var(--muted-foreground)); }
+.event-number { font-size: 11px; color: hsl(var(--muted-foreground)); }
+.programme-event h4 { font-size: 23px; font-weight: 500; margin: 5px 0 10px; line-height: 1.2; }
+.programme-event p { font-size: 15px; line-height: 1.7; color: hsl(var(--muted-foreground)); max-width: 480px; }
+.booking-section { padding-top: 80px; padding-bottom: 70px; }
+.booking-price { color: hsl(var(--primary)); font-size: 40px; font-weight: 500; white-space: nowrap; }
+.booking-price small { color: hsl(var(--muted-foreground)); font-size: 14px; font-weight: 400; }
+.booking-phases { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 38px; }
+.booking-phases article { border-top: 1px solid hsl(var(--border)); padding-top: 24px; }
+.phase-index { display: block; color: hsl(var(--primary)); font-size: 13px; margin-bottom: 27px; }
+.booking-phases h3 { font-size: 26px; font-weight: 500; margin: 12px 0; line-height: 1.2; }
+.booking-phases article > p:last-child { color: hsl(var(--muted-foreground)); font-size: 15px; line-height: 1.7; }
+.booking-contact { margin-top: 36px; }
+.market-section { padding: 80px 0 100px; }
+.market-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
+.market-map { background: hsl(var(--background)); border: 1px solid hsl(var(--border)); }
+.market-map-heading { display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; border-bottom: 1px solid hsl(var(--border)); }
+.market-map-heading > span { display: flex; align-items: center; gap: 10px; font-size: 14px; }
+.market-map-heading > span svg { color: hsl(var(--primary)); }
+.market-map > img { display: block; width: 100%; aspect-ratio: 1552 / 1510; object-fit: contain; }
+.market-map-caption { display: flex; justify-content: space-between; gap: 20px; padding: 17px 20px; border-top: 1px solid hsl(var(--border)); font-size: 12px; color: hsl(var(--muted-foreground)); }
+.market-map-caption a { display: flex; gap: 8px; align-items: center; color: hsl(var(--foreground)); }
+.market-map-dialog { width: min(94vw,1000px); max-width: 1000px; max-height: 92svh; overflow-y: auto; }
+.market-map-dialog img { width: 100%; height: auto; }
+.street-directory > h3 { font-size: 23px; font-weight: 500; line-height: 1.25; }
+.street-note { font-size: 12px; color: hsl(var(--muted-foreground)); margin-top: 7px; }
+.street-search { display: flex; align-items: center; gap: 12px; border-bottom: 1px solid hsl(var(--border)); margin-top: 22px; margin-bottom: 25px; padding: 4px 0; }
+.street-search svg { flex-shrink: 0; color: hsl(var(--muted-foreground)); }
+.street-search input { background: transparent; border: 0; box-shadow: none; padding-left: 0; }
+.street-list-heading { display: flex; justify-content: space-between; font-size: 11px; color: hsl(var(--muted-foreground)); padding-bottom: 14px; }
+.street-row { display: grid; grid-template-columns: 25px 1fr 72px; align-items: center; gap: 18px; padding: 16px 0; border-top: 1px solid hsl(var(--border)); }
+.street-index { color: hsl(var(--muted-foreground)); font-size: 11px; }
+.street-name h4 { font-size: 16px; font-weight: 500; line-height: 1.3; overflow-wrap: anywhere; }
+.street-name meter { display: block; appearance: none; width: 100%; max-width: 165px; height: 3px; margin-top: 10px; background: hsl(var(--border)); border: 0; }
+.street-name meter::-webkit-meter-bar { background: hsl(var(--border)); border: 0; border-radius: 0; height: 3px; }
+.street-name meter::-webkit-meter-optimum-value { background: hsl(var(--primary)); }
+.street-name meter::-moz-meter-bar { background: hsl(var(--primary)); }
+.street-spots { text-align: right; white-space: nowrap; }
+.street-spots strong { color: hsl(var(--primary)); font-size: 22px; font-weight: 500; }
+.street-spots span { color: hsl(var(--muted-foreground)); margin-left: 5px; font-size: 12px; }
+.story-grid { gap: 100px; }
+.story-grid h2 { font-weight: 500; font-size: 52px; }
+.photo-section h2 { font-weight: 500; font-size: 48px; }
+.site-footer .footer-title { font-weight: 500; }
+.site-footer [class*="tracking-"] { letter-spacing: 0; }
+@media(max-width:1024px) {
+ .page-banner h1 { font-size: 58px; }
+ .event-hero h1 { font-size: 72px; }
+ .day-programme { gap: 40px; }
+ .market-layout { gap: 30px; }
+ .visit-details > div { padding-left: 16px; padding-right: 16px; gap: 12px; }
+ .booking-phases { gap: 26px; }
+}
+@media(max-width:767px) {
+ .site-nav .brand-logo { width: 145px; }
+ .page-banner { padding: 146px 0 58px; }
+ .page-banner h1 { font-size: 42px; }
+ .event-hero { padding: 148px 0 45px; }
+ .event-hero h1 { font-size: 46px; overflow-wrap: anywhere; }
+ .hero-subtitle { font-size: 28px; margin-top: 18px; }
+ .event-hero-bottom { margin-top: 42px; gap: 20px; }
+ .event-hero-bottom svg { width: 32px; }
+ .section-heading { margin-bottom: 32px; gap: 18px; flex-wrap: wrap; }
+ .section-heading h2 { font-size: 34px; }
+ .visit-details { grid-template-columns: 1fr; gap: 0; padding-top: 15px; padding-bottom: 15px; }
+ .visit-details > div { padding: 18px 0; border-right: 0; border-bottom: 1px solid hsl(var(--border)); }
+ .programme-section,.booking-section { padding-top: 52px; padding-bottom: 60px; }
+ .programme-tabs { grid-template-columns: repeat(2,minmax(0,1fr)); }
+ .programme-tab { height: 110px; padding: 15px 18px; }
+ .programme-tab > svg { top: 16px; right: 15px; }
+ .tab-date { font-size: 34px; }
+ .day-programme { grid-template-columns: 1fr; gap: 32px; padding-top: 36px; }
+ .day-editorial h3 { font-size: 38px; max-width: none; }
+ .programme-photo { aspect-ratio: 2; margin-top: 24px; }
+ .programme-event { grid-template-columns: 70px 1fr; gap: 18px; padding: 22px 0; }
+ .event-time { font-size: 17px; }
+ .programme-event h4 { font-size: 21px; }
+ .booking-price { font-size: 30px; }
+ .booking-phases { grid-template-columns: 1fr; gap: 26px; }
+ .phase-index { margin-bottom: 16px; }
+ .booking-contact a { white-space: normal; height: auto; min-height: 48px; padding: 14px 20px; text-align: left; }
+ .market-section { padding: 52px 0 60px; }
+ .market-layout { grid-template-columns: 1fr; gap: 38px; }
+ .street-directory > h3 { font-size: 22px; }
+ .story-grid { gap: 30px; }
+ .story-grid h2,.photo-section h2 { font-size: 38px; }
 }

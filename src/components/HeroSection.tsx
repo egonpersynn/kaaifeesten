@@ -4,7 +4,7 @@ import heroHome from "@/assets/hero-home.png";
 
 export default function HeroSection() {
   return <>
-    <section className="event-hero bg-primary text-primary-foreground">
+    <section className="event-hero bg-primary text-background">
       <img src={heroHome} alt="De rommelmarkt op de Kaaifeesten in Eeklo" className="banner-photo" />
       <div className="banner-shade" />
       <div className="container relative z-10">
