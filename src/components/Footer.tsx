@@ -4,9 +4,7 @@ import kaaifeestenLogo from "@/assets/kaaifeesten-logo.png";
 
 const Footer = () => {
   const navLinks = [
-    { name: "Kies je beleving", path: "/" },
-    { name: "Kaaifeesten", path: "/kaaifeesten" },
-    { name: "Kaai Festival", path: "/kaai-festival" },
+    { name: "Kaaifeesten", path: "/" },
     { name: "Praktisch", path: "/praktisch" },
     { name: "Rommelmarkt", path: "/rommelmarkt" },
     { name: "Partners", path: "/partners" },
@@ -22,7 +20,7 @@ const Footer = () => {
             <img 
               src={kaaifeestenLogo} 
               alt="De Kaaifeesten" 
-              className="brand-logo"
+              className="brand-logo brand-logo-ink"
             />
             <h2 className="footer-title">Tot op<br /><em>de Kaai.</em></h2>
             <p className="text-primary-foreground/60 leading-relaxed font-light">

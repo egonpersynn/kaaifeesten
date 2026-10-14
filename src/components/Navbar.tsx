@@ -23,8 +23,7 @@ const Navbar = () => {
   }, [location.pathname]);
 
   const navLinks = [
-    { name: "Kaaifeesten", path: "/kaaifeesten" },
-    { name: "Kaai Festival", path: "/kaai-festival" },
+    { name: "Kaaifeesten", path: "/" },
     { name: "Praktisch", path: "/praktisch" },
     { name: "Rommelmarkt", path: "/rommelmarkt" },
     { name: "Partners", path: "/partners" },
@@ -41,7 +40,7 @@ const Navbar = () => {
       className={`site-nav fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-background border-b border-border py-4"
-          : "bg-primary/20 py-6"
+          : "bg-foreground/10 py-6"
       }`}
     >
       <div className="container mx-auto px-4">
@@ -51,8 +50,7 @@ const Navbar = () => {
             <img 
               src={kaaifeestenLogo} 
               alt="De Kaaifeesten" 
-              className="brand-logo"
-              style={!showLightText ? { filter: 'brightness(0) saturate(100%) invert(7%) sepia(46%) saturate(4756%) hue-rotate(213deg) brightness(96%) contrast(104%)' } : {}}
+              className={`brand-logo ${!showLightText ? "brand-logo-blue" : ""}`}
             />
           </Link>
 
@@ -76,7 +74,7 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button variant={isScrolled ? "default" : "outline"} size="sm" className={`uppercase tracking-[0.15em] text-xs px-6 ${showLightText && 'border-background text-background hover:bg-background hover:text-foreground'}`}>
+              <Button variant={isScrolled ? "default" : "outline"} size="sm" className={`text-sm px-6 ${showLightText && 'border-background text-background hover:bg-background hover:text-foreground'}`}>
                 Tickets
               </Button>
             </a>
