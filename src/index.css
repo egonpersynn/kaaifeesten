@@ -15,8 +15,8 @@
     --popover: 0 0% 98%;
     --popover-foreground: 0 0% 8%;
 
-    --primary: 195 100% 35.7%;
-    --primary-foreground: 0 0% 8%;
+    --primary: 225.42 54.87% 38.24%;
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 195 14% 97%;
     --secondary-foreground: 0 0% 8%;
@@ -24,15 +24,15 @@
     --muted: 0 0% 94%;
     --muted-foreground: 0 0% 45%;
 
-    --accent: 195 100% 35.7%;
-    --accent-foreground: 0 0% 8%;
+    --accent: 225.42 54.87% 38.24%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 195 10% 87%;
     --input: 0 0% 88%;
-    --ring: 195 100% 35.7%;
+    --ring: 225.42 54.87% 38.24%;
 
     --radius: 0;
 
@@ -253,7 +253,7 @@ main > section:not(.welcome-intro):not(.experience-grid):not(.page-banner):not(.
 /* Refined editorial festival identity. */
 :root {
   --photo-overlay: linear-gradient(90deg, hsl(var(--foreground) / .78), hsl(var(--foreground) / .1));
-  --brand-blue-filter: brightness(0) saturate(100%) invert(42%) sepia(75%) saturate(1886%) hue-rotate(160deg) brightness(90%) contrast(103%);
+  --brand-blue-filter: brightness(0) saturate(100%) invert(26%) sepia(31%) saturate(2346%) hue-rotate(197deg) brightness(92%) contrast(96%);
 }
 body { line-height: 1.55; }
 .eyebrow { letter-spacing: 0; }
