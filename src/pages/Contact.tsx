@@ -46,7 +46,7 @@ const Contact = () => {
   };
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="contact-page min-h-screen bg-background">
       <Navbar />
       
       <PageBanner title="We horen je graag." eyebrow="Contact / De Kaaifeesten" description="Een vraag, een idee of gewoon een hallo?" />
@@ -54,9 +54,9 @@ const Contact = () => {
       {/* Contact Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-border max-w-5xl mx-auto border border-border">
+          <div className="contact-layout grid grid-cols-1 lg:grid-cols-2 max-w-5xl mx-auto">
             {/* Contact Form */}
-            <div className="bg-background p-8 md:p-12">
+            <div className="contact-form bg-background">
               <h2 className="text-2xl font-bold text-foreground mb-8 tracking-tight">
                 Stuur ons een bericht
               </h2>
@@ -150,14 +150,14 @@ const Contact = () => {
             </div>
 
             {/* Map & Contact Info */}
-            <div className="bg-secondary flex flex-col">
+            <div className="contact-aside bg-secondary flex flex-col">
               {/* Google Maps */}
               <div className="h-80 lg:h-1/2">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2499.6647474831086!2d3.5567!3d51.1858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c373f0e1a0c4e9%3A0x40099ab2f4d6f50!2sGebroeders%20Van%20de%20Woestyneplein%2C%209900%20Eeklo!5e0!3m2!1snl!2sbe!4v1703123456789!5m2!1snl!2sbe"
                   width="100%"
                   height="100%"
-                  style={{ border: 0 }}
+                  className="border-0"
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
