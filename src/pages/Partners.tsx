@@ -35,7 +35,7 @@ const Partners = () => {
     <main className="partners-page min-h-screen bg-background">
       <Navbar />
       
-      <PageBanner title="Samen maken we het." eyebrow="Onze partners" description="Met steun van mensen en bedrijven die in de Kaai geloven." image={heroPartners} />
+      <PageBanner title="Onze partners" eyebrow="De Kaaifeesten" description="Samen maken we De Kaaifeesten mogelijk." image={heroPartners} />
 
       {/* Partner Info */}
       <section className="py-24 bg-background">

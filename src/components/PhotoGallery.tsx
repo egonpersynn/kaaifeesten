@@ -43,7 +43,7 @@ const PhotoGallery = () => {
             Sfeerbeelden
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight">
-            Dit was de Kaai.
+            Vorige edities
           </h2>
         </div>
 
@@ -57,6 +57,7 @@ const PhotoGallery = () => {
                 <img
                   src={photo.src}
                   alt={photo.alt}
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
                 />
               </div>

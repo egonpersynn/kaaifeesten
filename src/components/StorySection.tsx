@@ -8,8 +8,7 @@ const StorySection = () => {
               Sinds 1927
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight">
-              Klein begonnen.
-              Groot geworden.
+              Ons verhaal
             </h2>
           </div>
 

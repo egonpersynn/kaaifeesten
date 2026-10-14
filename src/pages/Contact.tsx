@@ -49,7 +49,7 @@ const Contact = () => {
     <main className="contact-page min-h-screen bg-background">
       <Navbar />
       
-      <PageBanner title="We horen je graag." eyebrow="Contact / De Kaaifeesten" description="Een vraag, een idee of gewoon een hallo?" />
+      <PageBanner title="Contact" eyebrow="De Kaaifeesten" description="Een vraag, een idee of gewoon een hallo?" />
 
       {/* Contact Section */}
       <section className="py-20 bg-background">
