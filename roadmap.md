@@ -1,8 +1,8 @@
 # Website-aanpassingen
-- [ ] Blauw V264 toepassen zodra de exacte kleur bekend is.
-- [ ] Facebook-video als automatisch spelende homebanner met klikgeluid, indien bron beschikbaar.
-- [ ] Homegalerij vervangen door de zeven nieuwe foto's; footertekst verwijderen.
-- [ ] Praktisch vereenvoudigen: twee bezoekdetails, dagnamen, alleen programma-inhoud.
-- [ ] Rommelmarktfasen onder elkaar met vetgedrukte datums.
-- [ ] Header: Contact, Tickets, Aanmelden voor de rommelmarkt.
-- [ ] Weergave en bediening controleren.
+- [x] Blauw V264 Royal Blue toepassen (digitale benadering #2C4697).
+- [ ] Homebanner-video: geblokkeerd door Facebook ('video kan niet worden ingesloten'); wacht op origineel videobestand.
+- [x] Homegalerij vervangen door de zeven nieuwe foto's; footertekst verwijderen.
+- [x] Praktisch vereenvoudigen: twee bezoekdetails, dagnamen, alleen programma-inhoud.
+- [x] Rommelmarktfasen onder elkaar met vetgedrukte datums.
+- [x] Header: Contact, Tickets, Aanmelden voor de rommelmarkt (bestaande aanmelding via e-mail).
+- [x] Weergave en bediening gecontroleerd; CDN-foto's laden via previewhost, lokale foto-test met proxy naar dezelfde assets.
