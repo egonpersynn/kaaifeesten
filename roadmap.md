@@ -1,6 +1,6 @@
 # High-end website
-- [ ] Directe Kaaifeesten-homepagina en navigatie zonder Kaai Festival.
-- [ ] RAL 5012 en verfijnde gezamenlijke vormgeving.
-- [ ] Eleganter programma per dag met behoud van inhoud.
-- [ ] Rommelmarktplan en verfijnd overzicht per straat.
-- [ ] Pagina's en bediening controleren.
+- [x] Directe Kaaifeesten-homepagina en navigatie zonder Kaai Festival.
+- [x] RAL 5012 en verfijnde gezamenlijke vormgeving.
+- [x] Eleganter programma per dag met behoud van inhoud.
+- [x] Rommelmarktplan en verfijnd overzicht per straat.
+- [x] Pagina's en bediening controleren.
