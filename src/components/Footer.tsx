@@ -22,7 +22,6 @@ const Footer = () => {
               alt="De Kaaifeesten" 
               className="brand-logo brand-logo-ink"
             />
-            <h2 className="footer-title">Tot op<br /><em>de Kaai.</em></h2>
             <p className="text-primary-foreground/60 leading-relaxed font-light">
               De grootste rommelmarkt van Vlaanderen. Een traditioneel buurtfeest 
               waar jong en oud samenkomt in het hartje van Eeklo.

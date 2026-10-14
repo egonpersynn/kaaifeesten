@@ -4,7 +4,7 @@ import PageBanner from "@/components/PageBanner";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Calendar, MapPin, Users, ArrowUpRight, Ticket } from "lucide-react";
+import { Calendar, MapPin, ArrowUpRight } from "lucide-react";
 import heroPraktisch from "@/assets/hero-praktisch.png";
 
 const days = [
@@ -37,15 +37,13 @@ export default function Praktisch() {
     <section className="visit-details container">
       <div><Calendar size={21} strokeWidth={1.4} /><p><strong>2 — 5 oktober 2026</strong><span>Eerste weekend van oktober</span></p></div>
       <div><MapPin size={21} strokeWidth={1.4} /><p><strong>Gebr. Van De Woestyneplein</strong><span>9900 Eeklo</span></p></div>
-      <div><Users size={21} strokeWidth={1.4} /><p><strong>Alle leeftijden welkom</strong><span>Van jong tot oud</span></p></div>
     </section>
     <section className="programme-section container">
       <div className="section-heading"><div><p className="eyebrow text-primary mb-5">Vier dagen op de Kaai</p><h2>Het programma<span className="text-muted-foreground"> / 2026</span></h2></div><span className="text-sm text-muted-foreground">02 — 05 oktober</span></div>
       <div className="programme-tabs" role="tablist" aria-label="Programma per dag">
-        {days.map((item) => <Button key={item.key} variant="ghost" role="tab" id={`tab-${item.key}`} aria-selected={selectedDay === item.key} aria-controls="day-programme" className={`programme-tab ${selectedDay === item.key ? "is-selected" : ""}`} onClick={() => setSelectedDay(item.key)}><span className="tab-day">{item.label}</span><span className="tab-date">{item.date}<span>oktober</span></span><ArrowUpRight size={20} /></Button>)}
+        {days.map((item) => <Button key={item.key} variant="ghost" role="tab" id={`tab-${item.key}`} aria-selected={selectedDay === item.key} aria-controls="day-programme" className={`programme-tab ${selectedDay === item.key ? "is-selected" : ""}`} onClick={() => setSelectedDay(item.key)}><span className="tab-day">{item.label}</span><ArrowUpRight size={20} /></Button>)}
       </div>
       <div id="day-programme" role="tabpanel" aria-labelledby={`tab-${day.key}`} className="day-programme" key={day.key}>
-        <div className="day-editorial"><p className="eyebrow text-muted-foreground">{day.label} {day.date} oktober 2026</p><h3>{day.theme}</h3><div className="day-admission"><Ticket size={18} strokeWidth={1.4} />{day.admission}</div><img src={heroPraktisch} alt="Een kind op het feestterrein van de Kaaifeesten" className="programme-photo" loading="lazy" /></div>
         <div className="programme-events">{day.events.map((event, index) => <article className="programme-event" key={event.title}><div className="event-time"><span>{event.time}</span>{"end" in event && <small>{event.end}</small>}</div><div><span className="event-number">0{index + 1}</span><h4>{event.title}</h4><p>{event.description}</p></div></article>)}
           {day.key === "zaterdag" && <Button asChild className="mt-8" size="lg"><a href="https://tickets.example.com" target="_blank" rel="noopener noreferrer">Tickets zaterdagavond<ArrowUpRight /></a></Button>}
           {day.key === "zondag" && <Button asChild variant="outline" className="mt-8" size="lg"><Link to="/rommelmarkt">Bekijk het rommelmarktplan<ArrowUpRight /></Link></Button>}

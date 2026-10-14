@@ -1,6 +1,8 @@
-# High-end website
-- [x] Directe Kaaifeesten-homepagina en navigatie zonder Kaai Festival.
-- [x] RAL 5012 en verfijnde gezamenlijke vormgeving.
-- [x] Eleganter programma per dag met behoud van inhoud.
-- [x] Rommelmarktplan en verfijnd overzicht per straat.
-- [x] Pagina's en bediening controleren.
+# Website-aanpassingen
+- [x] Blauw V264 Royal Blue toepassen (digitale benadering #2C4697).
+- [ ] Homebanner-video: geblokkeerd door Facebook ('video kan niet worden ingesloten'); wacht op origineel videobestand.
+- [x] Homegalerij vervangen door de zeven nieuwe foto's; footertekst verwijderen.
+- [x] Praktisch vereenvoudigen: twee bezoekdetails, dagnamen, alleen programma-inhoud.
+- [x] Rommelmarktfasen onder elkaar met vetgedrukte datums.
+- [x] Header: Contact, Tickets, Aanmelden voor de rommelmarkt (bestaande aanmelding via e-mail).
+- [x] Weergave en bediening gecontroleerd; CDN-foto's laden via previewhost, lokale foto-test met proxy naar dezelfde assets.
