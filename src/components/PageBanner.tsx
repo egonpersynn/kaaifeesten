@@ -2,7 +2,7 @@ import { ArrowDownRight } from "lucide-react";
 
 interface PageBannerProps { title: string; eyebrow: string; description?: string; image?: string }
 export default function PageBanner({ title, eyebrow, description, image }: PageBannerProps) {
-  return <section className="page-banner bg-primary text-primary-foreground">
+  return <section className="page-banner bg-primary text-background">
     {image && <img src={image} alt="" className="banner-photo" />}
     {image && <div className="banner-shade" />}
     <div className="container relative z-10">

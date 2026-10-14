@@ -30,6 +30,6 @@ export default function Preloader({ onComplete }: PreloaderProps) {
       <div className="loader-meter"><span className="eyebrow text-primary">Tot op de Kaai</span><span className="tabular-nums text-primary">{Math.round(progress)}%</span></div>
       <div className="h-1 w-64 bg-muted overflow-hidden"><div className="h-full bg-primary" style={{ width: `${progress}%` }} /></div>
     </div>
-    <div className="loader-bottom"><span>Kaaifeesten</span><span>Kaai Festival</span><span>Rommelmarkt</span></div>
+    <div className="loader-bottom"><span>De Kaaifeesten</span><span>Eeklo · sinds 1927</span></div>
   </div>;
 }

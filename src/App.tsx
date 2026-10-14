@@ -3,10 +3,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Preloader from "./components/Preloader";
-import Welcome from "./pages/Welcome";
-import KaaiFestival from "./pages/KaaiFestival";
 import { useLocation } from "react-router-dom";
 import Index from "./pages/Index";
 import Praktisch from "./pages/Praktisch";
@@ -38,9 +36,9 @@ const App = () => {
           <BrowserRouter>
             <ScrollReset />
             <Routes>
-              <Route path="/" element={<Welcome />} />
-              <Route path="/kaaifeesten" element={<Index />} />
-              <Route path="/kaai-festival" element={<KaaiFestival />} />
+              <Route path="/" element={<Index />} />
+              <Route path="/kaaifeesten" element={<Navigate to="/" replace />} />
+              <Route path="/kaai-festival" element={<Navigate to="/" replace />} />
               <Route path="/praktisch" element={<Praktisch />} />
               <Route path="/rommelmarkt" element={<Rommelmarkt />} />
               <Route path="/partners" element={<Partners />} />
