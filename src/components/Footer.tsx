@@ -20,7 +20,7 @@ const Footer = () => {
             <img 
               src={kaaifeestenLogo} 
               alt="De Kaaifeesten" 
-              className="brand-logo brand-logo-ink"
+                className="brand-logo"
             />
             <p className="text-primary-foreground/60 leading-relaxed font-light">
               De grootste rommelmarkt van Vlaanderen. Een traditioneel buurtfeest 
