@@ -1,4 +1,6 @@
 # Website-aanpassingen
+- [ ] Volledige dev.kaaifeesten.be-site vergelijken en home, rommelmarkt, partners en contact subtiel upgraden met behoud van eerdere voorkeuren.
+- [ ] Volledige navigatie en paginaweergave controleren.
 - [x] Praktische pagina overgenomen van dev.kaaifeesten.be met een subtiele upgrade; eerdere vereenvoudigingen behouden en alle vier dagen gecontroleerd.
 - [x] Blauw V264 Royal Blue toepassen (digitale benadering #2C4697).
 - [ ] Homebanner-video: geblokkeerd door Facebook ('video kan niet worden ingesloten'); wacht op origineel videobestand.
