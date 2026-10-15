@@ -23,7 +23,7 @@ const Navbar = () => {
   }, [location.pathname]);
 
   const navLinks = [
-    { name: "Kaaifeesten", path: "/" },
+    { name: "Home", path: "/" },
     { name: "Praktisch", path: "/praktisch" },
     { name: "Rommelmarkt", path: "/rommelmarkt" },
     { name: "Partners", path: "/partners" },
@@ -60,6 +60,7 @@ const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
+                 aria-current={isActive(link.path) ? "page" : undefined}
                 className={`text-sm transition-colors duration-200 ${
                   isActive(link.path)
                     ? showLightText ? "text-background font-semibold" : "text-foreground font-semibold"
@@ -77,7 +78,7 @@ const Navbar = () => {
             >
               Tickets
             </a>
-            <Button asChild variant={isScrolled ? "default" : "outline"} size="sm" className={`text-sm px-6 ${showLightText ? 'border-background text-background hover:bg-background hover:text-foreground' : ''}`}>
+            <Button asChild variant="default" size="sm" className="text-sm px-6">
               <Link to="/rommelmarkt#aanmelden">Aanmelden</Link>
             </Button>
           </div>
