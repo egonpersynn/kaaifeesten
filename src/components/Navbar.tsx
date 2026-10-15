@@ -46,7 +46,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3" aria-label="De Kaaifeesten — home">
+          <Link to="/" className="flex items-center gap-3">
             <img 
               src={kaaifeestenLogo} 
               alt="De Kaaifeesten" 
@@ -60,7 +60,6 @@ const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                  aria-current={isActive(link.path) ? "page" : undefined}
                 className={`text-sm transition-colors duration-200 ${
                   isActive(link.path)
                     ? showLightText ? "text-background font-semibold" : "text-foreground font-semibold"
@@ -102,7 +101,6 @@ const Navbar = () => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  aria-current={isActive(link.path) ? "page" : undefined}
                   className={`text-sm py-2 transition-colors ${isActive(link.path) ? "text-primary-foreground font-semibold" : "text-primary-foreground/70"}`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >

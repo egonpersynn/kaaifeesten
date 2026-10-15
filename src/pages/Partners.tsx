@@ -3,7 +3,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Mail } from "lucide-react";
-import { Link } from "react-router-dom";
 import heroPartners from "@/assets/hero-partners.png";
 
 import adremKeukens from "@/assets/sponsors/adrem-keukens.png";
@@ -32,10 +31,10 @@ const partners = [
 
 const Partners = () => {
   return (
-    <main className="partners-page min-h-screen bg-background">
+    <main className="min-h-screen bg-background">
       <Navbar />
       
-      <PageBanner title="Onze partners" eyebrow="De Kaaifeesten" description="Samen maken we De Kaaifeesten mogelijk." image={heroPartners} />
+      <PageBanner title="Samen maken we het." eyebrow="Onze partners" description="Met steun van mensen en bedrijven die in de Kaai geloven." image={heroPartners} />
 
       {/* Partner Info */}
       <section className="py-24 bg-background">
@@ -54,12 +53,12 @@ const Partners = () => {
               Van zichtbaarheid op onze website en sociale media tot exclusieve branding tijdens 
               het evenement — <em className="italic">samen vinden we de perfecte match</em>.
             </p>
-              <Button asChild variant="default" size="lg" className="uppercase tracking-[0.15em] text-xs">
-              <Link to="/contact">
+            <a href="/contact">
+              <Button variant="default" size="lg" className="uppercase tracking-[0.15em] text-xs">
                 <Mail className="w-4 h-4 mr-2" />
                 Neem contact op
-              </Link>
               </Button>
+            </a>
           </div>
         </div>
       </section>

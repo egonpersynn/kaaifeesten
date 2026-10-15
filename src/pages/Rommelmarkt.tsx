@@ -32,11 +32,11 @@ const phases = [
 export default function Rommelmarkt() {
   const [search, setSearch] = useState("");
   const visibleStreets = streets.filter((street) => street.name.toLocaleLowerCase("nl").includes(search.trim().toLocaleLowerCase("nl")));
-  return <main className="market-page min-h-screen bg-background">
+  return <main className="min-h-screen bg-background">
     <Navbar />
     <PageBanner title="De grootste rommelmarkt van Vlaanderen." eyebrow="De Kaaifeesten / rommelmarkt" description="Boek hier jouw standplaats voor 2026." image={heroRommelmarkt} />
     <section className="booking-section container">
-      <div className="section-heading"><div><p className="eyebrow text-primary mb-5">Voor onze standhouders</p><h2>Reserveer jouw standplaats</h2></div><span className="booking-price">€12 <small>/ 6 meter</small></span></div>
+      <div className="section-heading"><div><p className="eyebrow text-primary mb-5">Voor onze standhouders</p><h2>Een plek voor jou.</h2></div><span className="booking-price">€12 <small>/ 6 meter</small></span></div>
       <div className="booking-phases">{phases.map((phase, i) => <article key={phase.title}><span className="phase-index">0{i + 1}</span><h3>{phase.date}</h3><p>{phase.description}</p></article>)}</div>
       <div className="booking-contact" id="aanmelden"><Button asChild size="lg"><a href="mailto:dirkmussche7@telenet.be?subject=Aanmelding%20rommelmarkt%202026">Meld je aan voor de rommelmarkt<ArrowUpRight /></a></Button></div>
     </section>
